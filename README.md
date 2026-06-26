@@ -8,6 +8,8 @@
 **Lineage:** Dieter Rams (Braun, 1950–1995) × Bob Noorda & Massimo Vignelli / Unimark International (NYCTA, 1970)  
 **What this is:** A reproduction-grade interface standard — exact values, not vibes — extended with the philosophical substrate that drives why these systems matter.
 
+![Dr Non's Dieter Rams in NYC Metro Design Core — RAMS + NYCTA = DESIGN CORE](assets/photos/rams-nycta-concept-01.png)
+
 ---
 
 ## The Thesis
@@ -48,21 +50,19 @@ Listening in design terms: data rows before call-to-action. HUD before button. C
 
 No decorative stat. No vanity metric. No green number that doesn't represent a genuine improvement. The worst-case scenario must be visible alongside the headline.
 
-This is Rams's "honesty" rendered as a data policy. The interface is not a publicist. It does not frame, spin, or suppress. The design that shows only the up-moves is lying — not by commission, but by the shape of its silence. Omission is decoration with better PR. Neither belongs.
+This is Rams's "honesty" rendered as a data policy. The interface is not a publicist. It does not frame, spin, or suppress. Omission is decoration with better PR. Neither belongs.
 
 Provenance lines (`9px --ink-3`, source + date) are not fine print — they are the moral stance.
 
 **Mantra 4 — "A friend → mentor → confidant. Concise, precise, perfect."**
 
-Labels: small, letterspaced, uppercase, grey — the minimum information to name a cluster, never the maximum. Values: tabular, right-aligned, weight 600 (restraint reads as confidence; 700 reads as panic). Alignment: hairline precision, nothing arbitrary. The mentor doesn't explain what you can see — the label is the name; the number is the thing. What the mentor adds is judgment: the meta-line, the caveat, the provenance.
+Labels: small, letterspaced, uppercase, grey — the minimum information to name a cluster. Values: tabular, right-aligned, weight 600 (restraint reads as confidence; 700 reads as panic). Alignment: hairline precision, nothing arbitrary.
 
 Concise = cut every label to its minimum. Precise = tabular figures and fixed-width columns. Perfect = aligned to the last hairline, every time, no exceptions, forever.
 
 **Mantra 5 — "Everything happens for a reason. Suspend the catastrophe verdict. Help others first."**
 
-The Buddhist instruction for reading bad data: sit with it before reframing it. Do not rush to the positive interpretation; do not catastrophize before the data is in. "The wheel hasn't arrived yet."
-
-In practice: show uncertainty. Error bars, confidence intervals, lag labels, last-refresh timestamps — these are not visual noise. They are the epistemological honesty that makes the data trustworthy. A number without its provenance is a number you cannot act on safely. The interface that hides uncertainty creates false confidence, which leads to bad decisions, which causes real harm.
+In practice: show uncertainty. Error bars, confidence intervals, lag labels, last-refresh timestamps — these are not visual noise. They are the epistemological honesty that makes the data trustworthy. A number without its provenance is a number you cannot act on safely.
 
 The corollary: the worst case visible is not pessimism. It is the Stoic posture that lets the human act without being ambushed.
 
@@ -70,34 +70,18 @@ The corollary: the worst case visible is not pessimism. It is the Stoic posture 
 
 The disc, the arrow, the hairline — these are symbols. They work because we agree they work, not because they encode anything in nature. The NYCTA system is an entirely constructed agreement: orange is macro, the bullet is the board, the arrow means "more." The symbols are arbitrary. They still carry the train.
 
-This is not a weakness. It is the condition of all meaningful systems. Kant's categorical imperative — the axiom of universal law — says: test every pattern by asking whether you would will it into universal law. If it works only here, it is not an axiom. The disc works universally because the grammar is closed, consistent, and always explained at point-of-decision. The symbol earns its keep by never surprising you.
-
-### The Central Tension — Hold It, Don't Resolve It
-
-Non critiques possession, tradition, and convention from outside; he privately aches for unconditional belonging of exactly the kind those institutions provide. He does not resolve this. He writes it.
-
-This tension lives in the design system too. Rams is the critique — strip the ornament, distrust the decoration, refuse the template. NYCTA is the belonging — the disc is your address, the color is your line, you know where you are. The system says: you belong here *because you understood the grammar*, not because the interface reassured you. The wayfinding earns the belonging rather than gifting it.
-
-Surfaces built from this system should hold the same tension: rigorous about what doesn't work, warm about what is at stake. If a dashboard reads as cold and impersonal, the Rams work is incomplete — the data needs its provenance, its context, its human moment. If it reads as cozy and decorative, the NYCTA work is incomplete — the wayfinding has softened into ambience. Both-at-once is the target.
-
 ### The Buddhist Design Brief — Four Noble Truths Applied
 
-This is the most direct translation of philosophy into process:
+1. **Name the suffering** — what problem does this interface exist to solve?
+2. **Find its origin** — what creates the confusion, the overwhelm, the delay, the bad decision?
+3. **Define cessation** — what would a resolved interface look like?
+4. **Build the path** — the components, the cockpit, the hairline grid. The path is the last thing. Most projects start here and skip steps 1–3.
 
-1. **Name the suffering** — what problem does this interface exist to solve? Who is suffering from not having this information, and how? Start here, not at the feature list.
-2. **Find its origin** — what creates the confusion, the overwhelm, the delay, the bad decision? This is the user research question.
-3. **Define cessation** — what would a resolved interface look like? What is the minimum information surface that eliminates the suffering without creating new noise?
-4. **Build the path** — the components, the cockpit, the hairline grid. The path is the last thing. Most projects start here and skip steps 1–3. Those projects produce dashboards that look complete and answer nothing.
+### Wabi-Sabi + Kodawari
 
-Moggridge's human-centered process, the Rams design process, the NYCTA wayfinding process — all three are this brief, in different vocabularies.
+**Wabi-sabi:** real data, real timestamps, real uncertainty. No fakery. The hairline grid at 1px is the record of the data's actual structure.
 
-### Wabi-Sabi + Kodawari — The Japanese Complement
-
-**Wabi-sabi:** the real thing, showing its real use, in its real state. Real data, real timestamps, real uncertainty. No fakery, no manufactured gravitas, no numbers that have been rounded for aesthetics. The hairline grid showing at 1px is not a design trick — it is the record of the data's actual structure.
-
-**Kodawari:** pursue absolute precision within the chosen scope. Every hairline 1px. Every label tracked to exactly 0.14em at 9px, 0.16em at 11px. Every number tabular. Every column aligned to the baseline. The discipline is not pedantry — it is the accumulated care that makes the surface trustworthy. You trust a precise instrument because it is precise everywhere. One sloppy column breaks the contract.
-
-Together: ship something real (wabi-sabi) at the highest craft level (kodawari). Never fake, at any level of detail.
+**Kodawari:** every hairline 1px. Every label tracked to 0.14em at 9px, 0.16em at 11px. Every column baseline-aligned. The discipline is not pedantry — it is the accumulated care that makes the surface trustworthy.
 
 ---
 
@@ -110,7 +94,7 @@ LAYER 3 — Non's Humanistic Additions
 
 LAYER 2 — NYCTA Wayfinding (RAMS-x-NYCTA-DNA.md)
   Disc atoms · station plates · the arrow · trunk palette (8 colors, closed) ·
-  enclosure law: blue enclosed = identity; red bare = signal
+  enclosure law: enclosed = identity; bare = data
 
 LAYER 1 — Rams Foundation (RAMS-DESIGN-DNA.md)
   Greyscale tokens · type scale · hairline cell grids · one accent ·
@@ -118,6 +102,8 @@ LAYER 1 — Rams Foundation (RAMS-DESIGN-DNA.md)
 ```
 
 Layers are additive. Layer 1 governs everything. Layer 2 adds wayfinding when the product has navigable boards. Layer 3 is always in force — it is the philosophy, not the rules.
+
+![01 — The Rams Foundation: restraint is the operating system](assets/photos/rams-nycta-concept-02.png)
 
 ---
 
@@ -137,15 +123,7 @@ Drop on any wrapper. Everything styles from `var(--…)`.
 </div>
 ```
 
-```css
-/* Global resets — the only permitted globals */
-*, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: #faf9f7; }
-::selection { background: #1f6e43; color: #fff; }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .2; } }
-```
-
-NYCTA route palette (import when needed — not for every project):
+NYCTA route palette (when product has multiple navigable boards):
 
 ```css
 :root {
@@ -160,6 +138,8 @@ NYCTA route palette (import when needed — not for every project):
   --rt-ink:    #191712;  /* Hub / home */
 }
 ```
+
+![04 — Grid, Type & Hairline Order: order is the product](assets/photos/rams-nycta-concept-05.png)
 
 ---
 
@@ -183,6 +163,39 @@ Is it none of these?
 
 If you add color "to liven it up" — you have failed both masters. Delete it.
 
+![02 — The NYCTA Layer: color as wayfinding, never decoration](assets/photos/rams-nycta-concept-03.png)
+
+---
+
+## Enclosure Law — The Central Grammar
+
+This is the rule that keeps a screen full of color perfectly legible:
+
+| Form | Meaning | Example |
+|---|---|---|
+| **Color enclosed** (disc, plate) | Identity — *which board am I on?* | Orange disc = macro board. Constant. |
+| **Color bare** (text, bar, number) | Signal — *is this value up/down/live?* | Green `+14.8%` = gain. Dynamic. |
+
+A green disc and a bare green number can coexist on the same screen — they are different grammars, not competing signals. The enclosure is what disambiguates. Never invert it.
+
+![03 — The Two Color Systems: enclosed = identity, bare = data](assets/photos/rams-nycta-concept-04.png)
+
+---
+
+## The Cockpit Pattern — Vital Signs Always Visible
+
+```html
+<div style="position:sticky; top:0; z-index:50;
+            background:var(--paper); border-bottom:1px solid var(--line-2);">
+  <!-- Masthead: hub disc + nav discs + secondary links -->
+  <!-- Vital signs: status · uptime · active incidents · last refresh -->
+</div>
+```
+
+Keep the **fewest instruments needed to operate safely** permanently in view. Everything else is one decision away — never sooner. This is the cockpit principle, the Unimark principle, and Mantra 2 in the same breath.
+
+![05 — Cockpit, Components & Feedback: the critical instruments stay in view](assets/photos/rams-nycta-concept-06.png)
+
 ---
 
 ## The Ten Principles → Build Rules
@@ -202,33 +215,6 @@ If you add color "to liven it up" — you have failed both masters. Delete it.
 
 ---
 
-## The Cockpit Pattern — Vital Signs Always Visible
-
-```html
-<div style="position:sticky; top:0; z-index:50;
-            background:var(--paper); border-bottom:1px solid var(--line-2);">
-  <!-- Masthead: hub disc + nav discs + secondary links -->
-  <!-- Vital signs: status · uptime · active incidents · last refresh -->
-</div>
-```
-
-Keep the **fewest instruments needed to operate safely** permanently in view. Everything else is one decision away — never sooner. This is the cockpit principle, the Unimark principle, and Mantra 2 in the same breath.
-
----
-
-## Enclosure Law — The Central Grammar
-
-This is the rule that keeps a screen full of color perfectly legible:
-
-| Form | Meaning | Example |
-|---|---|---|
-| **Color enclosed** (disc, plate) | Identity — *which board am I on?* | Orange disc = macro board. Constant. |
-| **Color bare** (text, bar, number) | Signal — *is this value up/down/live?* | Green `+14.8%` = gain. Dynamic. |
-
-A green disc and a bare green number can coexist on the same screen — they are different grammars, not competing signals. The enclosure is what disambiguates. Never invert it.
-
----
-
 ## Files in This Repo
 
 | File | What it contains |
@@ -240,7 +226,7 @@ A green disc and a bare green number can coexist on the same screen — they are
 | `components.html` | Live rendered gallery — Rams components + NYCTA wayfinding, all 8 discs, all components. |
 | `quick-start.html` | Full cockpit + board template. Clone, rename, fill with real data. |
 | `assets/illustrations/` | **Drop illustrations here.** See `assets/illustrations/README.md`. |
-| `assets/photos/` | Drop photos here. |
+| `assets/photos/` | Photos and reference sheets. |
 | `assets/diagrams/` | Drop diagrams here. |
 
 ---
@@ -251,17 +237,15 @@ When building any surface from this system:
 
 1. **Identify the layer:** Does this product have multiple navigable boards? If yes → Layer 2 (NYCTA). If one view → Layer 1 (Rams only) is sufficient.
 2. **Apply the token block** from `tokens.css`.
-3. **Run the decision tree** (above) before adding any color.
+3. **Run the decision tree** before adding any color.
 4. **Apply the cockpit pattern** if the product has live data.
-5. **Check provenance** — every metric needs source + date/time. If you can't show it, question whether the metric belongs.
+5. **Check provenance** — every metric needs source + date/time.
 6. **Name the suffering** (Four Noble Truths step 1) before naming the components.
 7. **Remove one thing** before marking the task complete.
 
 ---
 
 ## Hard Bans
-
-From `RAMS-DESIGN-DNA.md` §8 and `RAMS-x-NYCTA-DNA.md` §8, combined:
 
 - Gradients, drop shadows, glows, blurs, glassmorphism
 - Rounded corners (0–2px maximum, structurally unavoidable only)
@@ -278,15 +262,13 @@ From `RAMS-DESIGN-DNA.md` §8 and `RAMS-x-NYCTA-DNA.md` §8, combined:
 - A 9th trunk color, or a custom shade
 - Filler, placeholder, decoration of any kind
 
+![06 — Workflow, Checklist & Hard Bans: from idea to shipped system](assets/photos/rams-nycta-concept-07.png)
+
 ---
 
 ## Illustration
 
-*Illustrations will be added to `assets/illustrations/` as they are delivered. See `assets/illustrations/README.md` for drop instructions and grammar.*
-
-The sanctioned illustration style for this system is the same as for Axiom Design Core: **[Xiaohei by Ian Neo](https://github.com/helloianneo/ian-xiaohei-illustrations)** — modernist, warm, readable. One character per surface. The character's palette is its own; do not remap to the Rams token set. The contrast between illustration warmth and the mono field is the point.
-
-Xiaohei is permitted in the same conditions as the Sato mercy-radius: where warmth does measurable human work — empty states, error states, onboarding, Play-mode artifacts. Not on Instrument-mode dashboards running live data.
+The sanctioned illustration style: **[Xiaohei by Ian Neo](https://github.com/helloianneo/ian-xiaohei-illustrations)** — modernist, warm, readable. One character per surface. Permitted where warmth does measurable human work — empty states, error states, onboarding, Play-mode artifacts. Not on Instrument-mode dashboards running live data.
 
 ---
 
