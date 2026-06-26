@@ -1,0 +1,423 @@
+<!doctype html>
+<!--
+  RAMS × NYCTA DESIGN CORE — Quick-Start Template
+  Full cockpit + board pattern. Clone, rename, fill with real data.
+
+  Before shipping:
+  □ Every color ran through the decision tree? (Data/Identity/Direction/None)
+  □ Every metric has provenance (source + date)?
+  □ Something removed since first draft?
+  □ Vital signs in the cockpit strip — fewest instruments to operate safely?
+  □ One trunk-color rule per board — nowhere else?
+  □ No unicode arrows? (CSS triangle only)
+  □ Weight ≤ 600 on all data?
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Product Name]</title>
+  <meta name="description" content="[Under 155 chars. Factual. No adjectives.]">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+
+  <style>
+    /* ── Cockpit masthead ──────────────────────────────────── */
+    .cockpit {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--paper);
+    }
+
+    .cockpit__nav {
+      border-bottom: 1px solid var(--line-2);
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 52px;
+    }
+
+    .cockpit__hub {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      margin-right: 18px;
+      flex-shrink: 0;
+    }
+
+    .cockpit__hub-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    /* Nav disc link */
+    .disc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      text-decoration: none;
+      color: var(--ink-2);
+      border-bottom: 2px solid transparent;
+      transition: color var(--t-state) var(--ease), border-color var(--t-state) var(--ease);
+    }
+
+    .disc-link:hover { color: var(--ink); }
+    .disc-link.active { color: var(--ink); }
+    /* Active border-color is set inline (trunk-specific) */
+
+    .disc-link__label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    /* Vital signs strip — always visible */
+    .cockpit__vitals {
+      border-bottom: 1px solid var(--line);
+      padding: 7px 22px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .vital {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10px;
+    }
+
+    .vital__label { color: var(--ink-3); }
+    .vital__val   { font-weight: 600; }
+
+    /* ── Page wrap ─────────────────────────────────────────── */
+    .page {
+      max-width: var(--max-w-tool);
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    /* ── Board container ───────────────────────────────────── */
+    .board { padding: 28px 0 44px; border-bottom: 1px solid var(--line); }
+    .board:last-child { border-bottom: 0; }
+
+    /* Station plate — board header */
+    .station {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 13px;
+      margin-bottom: 20px;
+    }
+    /* border-bottom color set inline per trunk */
+
+    .station__id {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .station__code {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      color: var(--ink-3);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .station__name {
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 1px;
+      line-height: 1.1;
+    }
+
+    .station__meta {
+      font-size: 10px;
+      color: var(--ink-3);
+      letter-spacing: 0.06em;
+      text-align: right;
+      line-height: 1.7;
+    }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    .footer {
+      padding: 16px 0;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .footer__copy {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ════ COCKPIT ═══════════════════════════════════════════ -->
+  <div class="cockpit">
+
+    <!-- Nav: hub disc + disc-link nav -->
+    <div class="cockpit__nav">
+      <a href="#" class="cockpit__hub">
+        <span class="disc disc--nav disc--hub">D</span>
+        <span class="cockpit__hub-name">[Product]</span>
+      </a>
+
+      <!-- Trunk: Blue (Markets / External) -->
+      <a href="#markets" class="disc-link active" style="border-bottom-color: var(--rt-blue);">
+        <span class="disc disc--nav" style="background:var(--rt-blue);">M</span>
+        <span class="disc-link__label">Markets</span>
+      </a>
+      <a href="#live" class="disc-link">
+        <span class="disc disc--nav" style="background:var(--rt-blue);">L</span>
+        <span class="disc-link__label">Live</span>
+      </a>
+
+      <!-- Trunk: Orange (Macro / Analysis) -->
+      <a href="#regime" class="disc-link" style="margin-left:8px;">
+        <span class="disc disc--nav" style="background:var(--rt-orange);">R</span>
+        <span class="disc-link__label">Regime</span>
+      </a>
+
+      <!-- Trunk: Green (Money / Action) -->
+      <a href="#buys" class="disc-link" style="margin-left:8px;">
+        <span class="disc disc--nav" style="background:var(--rt-green);">B</span>
+        <span class="disc-link__label">Buys</span>
+      </a>
+      <a href="#portfolio" class="disc-link">
+        <span class="disc disc--nav" style="background:var(--rt-green);">P</span>
+        <span class="disc-link__label">Portfolio</span>
+      </a>
+    </div>
+
+    <!-- Vital signs: fewest instruments to operate safely -->
+    <div class="cockpit__vitals">
+      <div class="vital">
+        <span class="dot-live"></span>
+        <span class="vital__label">Status</span>
+        <span class="vital__val">Nominal</span>
+      </div>
+      <div class="vital">
+        <span class="vital__label">Feeds</span>
+        <span class="vital__val">47 / 47</span>
+      </div>
+      <div class="vital">
+        <span class="vital__label">Lag</span>
+        <span class="vital__val">2.3s</span>
+      </div>
+      <div class="vital">
+        <span class="vital__label">Incidents</span>
+        <span class="vital__val" style="color:var(--neg);">3</span>
+      </div>
+      <div class="vital">
+        <span class="vital__label">Refreshed</span>
+        <span class="vital__val" style="font-family:var(--font-mono);font-size:10px;">14:32 UTC</span>
+      </div>
+    </div>
+  </div>
+  <!-- END COCKPIT -->
+
+
+  <main>
+    <div class="page">
+
+      <!-- ════ BOARD: MARKETS (Blue trunk) ══════════════════ -->
+      <section class="board" id="markets">
+
+        <!-- Station plate -->
+        <div class="station" style="border-bottom:2px solid var(--rt-blue);">
+          <div class="station__id">
+            <span class="disc disc--board" style="background:var(--rt-blue);">M</span>
+            <div>
+              <div class="station__code">Markets 01</div>
+              <div class="station__name">Live Markets</div>
+            </div>
+          </div>
+          <div class="station__meta">47 feeds · 2.3s lag</div>
+        </div>
+
+        <!-- Board content — pure Rams mono from here -->
+        <div class="grid-hair" style="grid-template-columns:repeat(4,1fr);margin-bottom:22px;">
+          <div style="padding:13px 16px;">
+            <div class="stat-lbl">DJIA</div>
+            <div class="stat-val">43,189</div>
+            <div class="stat-sub" style="color:var(--accent);">+1.24%</div>
+          </div>
+          <div style="padding:13px 16px;">
+            <div class="stat-lbl">S&P 500</div>
+            <div class="stat-val">5,872</div>
+            <div class="stat-sub" style="color:var(--neg);">−0.38%</div>
+          </div>
+          <div style="padding:13px 16px;">
+            <div class="stat-lbl">Nasdaq</div>
+            <div class="stat-val">18,445</div>
+            <div class="stat-sub" style="color:var(--accent);">+0.71%</div>
+          </div>
+          <div style="padding:13px 16px;">
+            <div class="stat-lbl">10Y Yield</div>
+            <div class="stat-val">4.31%</div>
+            <div class="stat-sub" style="color:var(--neg);">+0.04</div>
+          </div>
+        </div>
+
+        <!-- Section within board -->
+        <div class="s-head">
+          <div class="s-head__name">Asia Pacific</div>
+          <div class="s-head__meta">close 14:30 UTC</div>
+        </div>
+        <div style="border:1px solid var(--line);background:var(--panel);padding:13px 16px;">
+          <div class="row">
+            <span class="row__k">SET (Thailand)</span>
+            <span style="display:flex;align-items:baseline;gap:10px;">
+              <span class="row__v">1,487</span>
+              <span class="row__d-neg">−0.52%</span>
+            </span>
+          </div>
+          <div class="row">
+            <span class="row__k">HSI (Hong Kong)</span>
+            <span style="display:flex;align-items:baseline;gap:10px;">
+              <span class="row__v">17,221</span>
+              <span class="row__d-pos">+1.14%</span>
+            </span>
+          </div>
+          <div class="row" style="border-bottom:0;">
+            <span class="row__k">Nikkei (Japan)</span>
+            <span style="display:flex;align-items:baseline;gap:10px;">
+              <span class="row__v">38,104</span>
+              <span class="row__d-pos">+0.83%</span>
+            </span>
+          </div>
+        </div>
+        <div style="font-size:9px;color:var(--ink-3);margin-top:4px;">Source: Yahoo Finance · Delayed 15min · 2026-06-27</div>
+
+        <!-- Drill-in link (arrow to another board) -->
+        <div style="margin-top:16px;">
+          <a href="#live" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:0.11em;text-transform:uppercase;color:var(--rt-blue);text-decoration:none;">
+            Live feed
+            <span style="display:inline-block;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:7px solid currentColor;"></span>
+          </a>
+        </div>
+
+      </section>
+
+
+      <!-- ════ BOARD: REGIME (Orange trunk) ═════════════════ -->
+      <section class="board" id="regime">
+
+        <div class="station" style="border-bottom:2px solid var(--rt-orange);">
+          <div class="station__id">
+            <span class="disc disc--board" style="background:var(--rt-orange);">R</span>
+            <div>
+              <div class="station__code">Macro 03</div>
+              <div class="station__name">Regime</div>
+            </div>
+          </div>
+          <div class="station__meta">Global macro · IMF/World Bank<br>2026-06-27 · UTC+7</div>
+        </div>
+
+        <div class="grid-hair" style="grid-template-columns:repeat(3,1fr);margin-bottom:22px;">
+          <div style="padding:13px 16px;">
+            <div class="stat-lbl">US Growth</div>
+            <div class="stat-val">2.1%</div>
+            <div class="stat-sub">GDP YoY Q1 2026</div>
+          </div>
+          <div style="padding:13px 16px;">
+            <div class="stat-lbl">CPI Inflation</div>
+            <div class="stat-val" style="color:var(--neg);">3.7%</div>
+            <div class="stat-sub">above target</div>
+          </div>
+          <div style="padding:13px 16px;">
+            <div class="stat-lbl">DXY</div>
+            <div class="stat-val">104.2</div>
+            <div class="stat-sub" style="color:var(--neg);">+0.3% today</div>
+          </div>
+        </div>
+
+        <div class="s-head">
+          <div class="s-head__name">Status Plate</div>
+          <div class="s-head__meta">macro · risk assessment</div>
+        </div>
+        <div style="display:flex;align-items:stretch;border:1px solid var(--line-2);background:var(--panel);">
+          <div style="background:var(--ink);color:var(--paper);padding:14px 20px;display:flex;align-items:center;flex-shrink:0;">
+            <span style="font-size:11px;letter-spacing:0.18em;font-weight:700;">RISK-ON</span>
+          </div>
+          <div style="padding:11px 20px;flex:1;">
+            <div style="font-size:13px;font-weight:600;">Conditions favor equities — moderate conviction</div>
+            <div style="font-size:11px;color:var(--ink-3);margin-top:2px;">Model updated 2026-06-27 · Source: IMF WEO + Fed projections</div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ════ BOARD: BUYS (Green trunk) ════════════════════ -->
+      <section class="board" id="buys">
+
+        <div class="station" style="border-bottom:2px solid var(--rt-green);">
+          <div class="station__id">
+            <span class="disc disc--board" style="background:var(--rt-green);">B</span>
+            <div>
+              <div class="station__code">Action 01</div>
+              <div class="station__name">Buys</div>
+            </div>
+          </div>
+          <div class="station__meta">Active watch · 6 positions</div>
+        </div>
+
+        <div class="grid-hair" style="grid-template-columns:repeat(2,1fr);margin-bottom:22px;">
+          <div style="padding:13px 16px;">
+            <div class="stat-lbl">Portfolio Gain</div>
+            <div class="stat-val" style="color:var(--accent);">+14.8%</div>
+            <div class="stat-sub">YTD · vs S&P +8.4%</div>
+          </div>
+          <div style="padding:13px 16px;">
+            <div class="stat-lbl">Open Positions</div>
+            <div class="stat-val">6</div>
+            <div class="stat-sub">4 long · 2 short</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:4px;">
+          <a href="#" class="btn btn--accent">
+            New position
+            <span style="display:inline-block;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:7px solid currentColor;"></span>
+          </a>
+          <a href="#portfolio" class="btn btn--ghost">View portfolio</a>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+
+  <!-- ════ FOOTER ════════════════════════════════════════════ -->
+  <footer>
+    <div class="page">
+      <div class="footer">
+        <div class="footer__copy">Rams × NYCTA Design Core</div>
+        <div class="footer__copy">Non Arkaraprasertkul · axiom.nonarkara.org</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

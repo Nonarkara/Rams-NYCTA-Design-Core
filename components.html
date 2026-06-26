@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rams × NYCTA — Component Gallery</title>
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    body { padding: 44px 22px; max-width: 1100px; margin: 0 auto; }
+
+    /* Gallery scaffolding */
+    .g-section { margin-bottom: 64px; }
+    .g-label {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.20em; text-transform: uppercase;
+      color: var(--ink-3); border-bottom: 1px solid var(--line); padding-bottom: 8px;
+      margin-bottom: 22px; display: flex; align-items: baseline; justify-content: space-between;
+    }
+    .g-label span { font-weight: 500; letter-spacing: 0; color: var(--ink-3); font-size: 10px; text-transform: none; }
+    .g-row { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-start; }
+    .g-col { min-width: 240px; flex: 1; }
+    .g-note { font-size: 10px; color: var(--ink-3); margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line); font-style: italic; }
+
+    /* Masthead */
+    .masthead { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 22px; margin-bottom: 44px; border-bottom: 2px solid var(--ink); }
+    .masthead__title { font-size: 22px; font-weight: 600; }
+    .masthead__meta { font-size: var(--t-micro); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+  </style>
+</head>
+<body>
+
+<div class="masthead">
+  <div>
+    <div class="masthead__meta">Rams × NYCTA Design Core</div>
+    <div class="masthead__title">Component Gallery</div>
+  </div>
+  <div style="font-size:10px;color:var(--ink-3);text-align:right;line-height:1.8;">
+    Non Arkaraprasertkul<br>
+    Rams + Noorda/Vignelli
+  </div>
+</div>
+
+
+<!-- ════ §1 COLOR SYSTEM ════ -->
+<div class="g-section">
+  <div class="g-label">§1 Color — Warm-Neutral Near-Monochrome <span>greyscale + one signal + one neg</span></div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
+    <div style="background:var(--paper);padding:13px 11px;border:1px solid var(--line-2);">
+      <div class="stat-lbl">PAPER</div>
+      <div style="font-size:10px;margin-top:6px;font-family:var(--font-mono);">#faf9f7</div>
+    </div>
+    <div style="background:var(--panel);padding:13px 11px;border:1px solid var(--line-2);">
+      <div class="stat-lbl">PANEL</div>
+      <div style="font-size:10px;margin-top:6px;font-family:var(--font-mono);">#ffffff</div>
+    </div>
+    <div style="background:var(--ink);padding:13px 11px;">
+      <div class="stat-lbl" style="color:rgba(255,255,255,.5);">INK</div>
+      <div style="font-size:10px;margin-top:6px;font-family:var(--font-mono);color:rgba(255,255,255,.7);">#191712</div>
+    </div>
+    <div style="background:var(--accent);padding:13px 11px;">
+      <div class="stat-lbl" style="color:rgba(255,255,255,.7);">ACCENT</div>
+      <div style="font-size:10px;margin-top:6px;font-family:var(--font-mono);color:#fff;">#1f6e43</div>
+    </div>
+    <div style="background:var(--neg);padding:13px 11px;">
+      <div class="stat-lbl" style="color:rgba(255,255,255,.7);">NEG</div>
+      <div style="font-size:10px;margin-top:6px;font-family:var(--font-mono);color:#fff;">#a23a26</div>
+    </div>
+  </div>
+  <div style="margin-top:1px;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
+    <div style="background:var(--ink-2);padding:11px;">
+      <div class="stat-lbl" style="color:rgba(255,255,255,.6);">INK-2</div>
+      <div style="font-size:10px;color:#fff;font-family:var(--font-mono);margin-top:4px;">#6f6c63</div>
+    </div>
+    <div style="background:var(--ink-3);padding:11px;">
+      <div class="stat-lbl" style="color:rgba(255,255,255,.6);">INK-3</div>
+      <div style="font-size:10px;color:#fff;font-family:var(--font-mono);margin-top:4px;">#a9a59a</div>
+    </div>
+    <div style="background:var(--line);padding:11px;">
+      <div class="stat-lbl">LINE</div>
+      <div style="font-size:10px;font-family:var(--font-mono);margin-top:4px;">#e7e5dd</div>
+    </div>
+    <div style="background:var(--line-2);padding:11px;">
+      <div class="stat-lbl">LINE-2</div>
+      <div style="font-size:10px;font-family:var(--font-mono);margin-top:4px;">#d2cfc5</div>
+    </div>
+    <div style="background:var(--fill-1);padding:11px;">
+      <div class="stat-lbl" style="color:rgba(255,255,255,.6);">FILL-1/2/3</div>
+      <div style="font-size:10px;color:#fff;font-family:var(--font-mono);margin-top:4px;">#8f8b80…</div>
+    </div>
+  </div>
+  <div class="g-note">Warmth rule: neutrals carry a trace of yellow/red — never cool blue-greys. Pure #000 and #fff are banned. Accent is desaturated — Rams never shouts.</div>
+</div>
+
+
+<!-- ════ §2 NYCTA ROUTE PALETTE ════ -->
+<div class="g-section">
+  <div class="g-label">NYCTA Route Palette — The 8 Trunk Colors + Hub <span>§3 RAMS-x-NYCTA-DNA · closed set, never add a 9th</span></div>
+  <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
+    <div style="background:var(--rt-blue);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span class="disc disc--board" style="background:var(--rt-blue);">A</span>
+      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">A·C·E</div>
+    </div>
+    <div style="background:var(--rt-orange);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span class="disc disc--board" style="background:var(--rt-orange);">R</span>
+      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">B·D·F·M</div>
+    </div>
+    <div style="background:var(--rt-green);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span class="disc disc--board" style="background:var(--rt-green);">F</span>
+      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">4·5·6</div>
+    </div>
+    <div style="background:var(--rt-red);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span class="disc disc--board" style="background:var(--rt-red);">P</span>
+      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">1·2·3</div>
+    </div>
+    <div style="background:var(--rt-purple);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span class="disc disc--board" style="background:var(--rt-purple);">N</span>
+      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">7</div>
+    </div>
+    <div style="background:var(--rt-yellow);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span class="disc disc--board disc--yellow" style="background:var(--rt-yellow);">Q</span>
+      <div style="font-size:8px;color:var(--ink);letter-spacing:0.1em;font-weight:600;text-align:center;">N·Q·R·W</div>
+    </div>
+    <div style="background:var(--rt-grey);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span class="disc disc--board" style="background:var(--rt-grey);">L</span>
+      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">L·shuttle</div>
+    </div>
+    <div style="background:var(--rt-brown);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span class="disc disc--board" style="background:var(--rt-brown);">J</span>
+      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">J·Z</div>
+    </div>
+    <div style="background:var(--rt-ink);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span class="disc disc--board disc--hub" style="width:34px;height:34px;font-size:16px;">D</span>
+      <div style="font-size:8px;color:rgba(255,255,255,.6);letter-spacing:0.1em;font-weight:600;text-align:center;">HUB</div>
+    </div>
+  </div>
+  <div class="g-note">Yellow exception: white on yellow fails contrast — yellow disc always takes dark glyph (#191712). Hub (home/masthead) = ink disc, never a trunk color. Closed set — never add a 9th hue.</div>
+</div>
+
+
+<!-- ════ §3 TYPOGRAPHY ════ -->
+<div class="g-section">
+  <div class="g-label">§2 Typography — Helvetica Neue lineage <span>tabular figures · weight ceiling 600 · tracking scales inversely with size</span></div>
+  <div style="border:1px solid var(--line);background:var(--panel);">
+    <div style="padding:18px 20px;border-bottom:1px solid var(--line);">
+      <div style="font-size:var(--t-hero);font-weight:600;letter-spacing:-0.01em;line-height:1.1;">Hero metric — 30–38px / 600</div>
+    </div>
+    <div style="padding:14px 20px;border-bottom:1px solid var(--line);">
+      <div style="font-size:var(--t-big);font-weight:600;line-height:1.2;">Section metric / big value — 19–24px / 600</div>
+    </div>
+    <div style="padding:13px 20px;border-bottom:1px solid var(--line);">
+      <div style="font-size:var(--t-stat);font-weight:600;">Stat value in a cell — 20px / 600</div>
+    </div>
+    <div style="padding:12px 20px;border-bottom:1px solid var(--line);">
+      <div style="font-size:var(--t-body);font-weight:500;line-height:1.42;">Body / row value — 13px / 500–600. The reading floor for dense instrument panels and data tables.</div>
+    </div>
+    <div style="padding:11px 20px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:44px;">
+      <div style="font-size:var(--t-label);font-weight:700;letter-spacing:0.16em;text-transform:uppercase;">SECTION HEADER — 11px / 700</div>
+      <div style="font-size:var(--t-control);font-weight:600;letter-spacing:0.11em;text-transform:uppercase;">CONTROL / NAV — 11px / 600</div>
+    </div>
+    <div style="padding:10px 20px;">
+      <div style="font-size:var(--t-micro);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);">MICRO-LABEL · META · PROVENANCE — 9px / 600 · 0.14em · ink-3</div>
+    </div>
+  </div>
+  <div class="g-note">Rule: the smaller the text, the wider the tracking. 9px labels get 0.14–0.18em; body gets 0. Labels are always smaller, greyer, and more letterspaced than their values. Never 700+ on data.</div>
+</div>
+
+
+<!-- ════ §4 SECTION HEADER ════ -->
+<div class="g-section">
+  <div class="g-label">§4.1 Section Header <span>ink rule · 700/0.16em · right-aligned meta</span></div>
+  <div style="border:1px solid var(--line);background:var(--panel);padding:20px;">
+    <div class="s-head" style="margin-bottom:14px;">
+      <div class="s-head__name">Live Markets</div>
+      <div class="s-head__meta">47 feeds · last 15s</div>
+    </div>
+    <div style="font-size:13px;color:var(--ink-2);line-height:1.42;">Section content goes here. The header section is one of the few elements that deliberately uses full ink weight for its rule — marking a structural threshold, not a data boundary.</div>
+  </div>
+</div>
+
+
+<!-- ════ §5 HAIRLINE CELL GRID ════ -->
+<div class="g-section">
+  <div class="g-label">§3.2 Hairline Cell Grid — The Signature Move <span>background:var(--line); gap:1px; white cells</span></div>
+  <div class="grid-hair" style="grid-template-columns:repeat(4,1fr);">
+    <div style="padding:13px 16px;"><div class="stat-lbl">Markets</div><div class="stat-val">47</div><div class="stat-sub">feeds active</div></div>
+    <div style="padding:13px 16px;"><div class="stat-lbl">Incidents</div><div class="stat-val" style="color:var(--neg);">3</div><div class="stat-sub">critical</div></div>
+    <div style="padding:13px 16px;"><div class="stat-lbl">Uptime</div><div class="stat-val" style="color:var(--accent);">99.94%</div><div class="stat-sub">30 days</div></div>
+    <div style="padding:13px 16px;"><div class="stat-lbl">Delay</div><div class="stat-val">2.3s</div><div class="stat-sub">avg feed lag</div></div>
+  </div>
+  <div class="grid-hair" style="grid-template-columns:repeat(3,1fr);margin-top:1px;">
+    <div style="padding:13px 16px;"><div class="stat-lbl">DJIA</div><div class="stat-val">43,189</div><div class="stat-sub" style="color:var(--accent);">+1.24%</div></div>
+    <div style="padding:13px 16px;"><div class="stat-lbl">S&P 500</div><div class="stat-val">5,872</div><div class="stat-sub" style="color:var(--neg);">−0.38%</div></div>
+    <div style="padding:13px 16px;"><div class="stat-lbl">10Y Yield</div><div class="stat-val">4.31%</div><div class="stat-sub">+0.04</div></div>
+  </div>
+  <div class="g-note">Grid background = var(--line). Gap = 1px. Each cell background = var(--panel). The line bleeds through. No border on cells — the gap IS the border. Renders a precise instrument panel for free.</div>
+</div>
+
+
+<!-- ════ §6 DATA ROW ════ -->
+<div class="g-section">
+  <div class="g-label">§4.3 Data Row — Label · Value · Delta <span>right-align numbers · fixed-width delta column</span></div>
+  <div class="g-row">
+    <div class="g-col">
+      <div style="border:1px solid var(--line);background:var(--panel);padding:13px 16px;">
+        <div class="row">
+          <span class="row__k">AQI Bangkok</span>
+          <span style="display:flex;align-items:baseline;gap:10px;">
+            <span class="row__v">157</span>
+            <span class="row__d-neg">+12.3%</span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="row__k">SLIC Score</span>
+          <span style="display:flex;align-items:baseline;gap:10px;">
+            <span class="row__v">68.4</span>
+            <span class="row__d-neg">−0.39%</span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="row__k">Systems nominal</span>
+          <span style="display:flex;align-items:baseline;gap:10px;">
+            <span class="row__v">18 / 21</span>
+            <span style="font-size:11px;font-weight:600;color:var(--ink-3);width:54px;text-align:right;">—</span>
+          </span>
+        </div>
+        <div class="row" style="border-bottom:0;">
+          <span class="row__k">Portfolio gain</span>
+          <span style="display:flex;align-items:baseline;gap:10px;">
+            <span class="row__v">+14.8%</span>
+            <span class="row__d-pos">+14.8%</span>
+          </span>
+        </div>
+      </div>
+      <div style="font-size:9px;color:var(--ink-3);margin-top:4px;">Source: Supabase · refreshed 15s</div>
+    </div>
+    <div class="g-col">
+      <div class="g-note" style="border:none;padding:0;margin:0;">Up → var(--accent). Down → var(--neg). Neutral → var(--ink-3). Fixed-width delta column (54px) keeps sign alignment. Baseline-aligned across label and value. Provenance line underneath is the honesty clause.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ §7 BAR / METER ════ -->
+<div class="g-section">
+  <div class="g-label">§4.4 Bar / Meter + §4.5 Stacked Allocation <span>flat track · solid fill · square ends · no radius · no gradient</span></div>
+  <div class="g-row">
+    <div class="g-col">
+      <div style="border:1px solid var(--line);background:var(--panel);padding:16px;">
+        <div style="margin-bottom:14px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-3);">Budget utilization</span>
+            <span style="font-size:11px;font-weight:600;">69%</span>
+          </div>
+          <div class="bar"><div class="bar__fill" style="width:69%;"></div></div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-3);">Critical threshold</span>
+            <span style="font-size:11px;font-weight:600;color:var(--neg);">94%</span>
+          </div>
+          <div class="bar bar--neg"><div class="bar__fill" style="width:94%;"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-3);">Live systems</span>
+            <span style="font-size:11px;font-weight:600;color:var(--accent);">86%</span>
+          </div>
+          <div class="bar bar--accent"><div class="bar__fill" style="width:86%;"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="g-col">
+      <div style="border:1px solid var(--line);background:var(--panel);padding:16px;">
+        <div style="font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;">§4.5 Stacked Allocation</div>
+        <div style="display:flex;height:8px;border:1px solid var(--line);">
+          <div style="width:38%;background:var(--ink);"></div>
+          <div style="width:27%;background:var(--accent);"></div>
+          <div style="width:15%;background:var(--fill-1);"></div>
+          <div style="flex:1;background:var(--line);"></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:8px;">
+          <div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;background:var(--ink);"></div><span style="font-size:10px;color:var(--ink-3);">Command · 38%</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;background:var(--accent);"></div><span style="font-size:10px;color:var(--ink-3);">Active · 27%</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;background:var(--fill-1);"></div><span style="font-size:10px;color:var(--ink-3);">Pending · 15%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ §8 STATUS PLATE ════ -->
+<div class="g-section">
+  <div class="g-label">§4.6 Status Plate — The Black Sign-Plate <span>left identity block · body · right meta</span></div>
+  <div style="display:flex;flex-direction:column;gap:1px;">
+    <div style="display:flex;align-items:stretch;border:1px solid var(--line-2);background:var(--panel);">
+      <div style="background:var(--ink);color:var(--paper);padding:14px 20px;display:flex;align-items:center;flex-shrink:0;">
+        <span style="font-size:11px;letter-spacing:0.18em;font-weight:700;">NOMINAL</span>
+      </div>
+      <div style="padding:11px 20px;flex:1;">
+        <div style="font-size:13px;font-weight:600;">All systems operational</div>
+        <div style="font-size:11px;color:var(--ink-3);margin-top:2px;">Refreshed 14:32 UTC · 99.94% uptime / 30d</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:stretch;border:1px solid var(--line-2);background:var(--panel);">
+      <div style="background:var(--neg);color:#fff;padding:14px 20px;display:flex;align-items:center;flex-shrink:0;">
+        <span style="font-size:11px;letter-spacing:0.18em;font-weight:700;">CRITICAL</span>
+      </div>
+      <div style="padding:11px 20px;flex:1;">
+        <div style="font-size:13px;font-weight:600;color:var(--neg);">3 incidents — Phuket feed latency</div>
+        <div style="font-size:11px;color:var(--ink-3);margin-top:2px;">Opened 14:10 UTC · Escalated · ETA unknown</div>
+      </div>
+    </div>
+  </div>
+  <div class="g-note">The black block left is the "sign plate" from NYCTA — reserve near-black fills for genuine status. The body stays on white. Never use gradient or colour to signal state — the form IS the signal.</div>
+</div>
+
+
+<!-- ════ §9 BUTTONS + LIVE DOT ════ -->
+<div class="g-section">
+  <div class="g-label">§4.7 Buttons · §4.9 Live Indicator <span>square · 700 · UPPERCASE · one animation only</span></div>
+  <div class="g-row" style="align-items:center;">
+    <button class="btn btn--primary">View positions
+      <span style="display:inline-block;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:7px solid currentColor;"></span>
+    </button>
+    <button class="btn btn--accent">Buy
+      <span style="display:inline-block;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:7px solid currentColor;"></span>
+    </button>
+    <button class="btn btn--ghost">Cancel</button>
+    <a href="#" style="font-size:11px;font-weight:600;letter-spacing:0.11em;text-transform:uppercase;color:var(--ink-2);text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+      All markets
+      <span style="display:inline-block;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:7px solid currentColor;"></span>
+    </a>
+    <div style="display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--panel);padding:11px 14px;">
+      <span class="dot-live"></span>
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;">Live</span>
+    </div>
+  </div>
+  <div class="g-note">Primary = ink. Accent = signal green (positive/confirm). Ghost = transparent. Tertiary = no border, grey text, triangle. The solid triangle (CSS-drawn, not Unicode) is the only directional element. The pulsing dot is the only sanctioned animation.</div>
+</div>
+
+
+<!-- ════ §10 NYCTA DISC SIZES ════ -->
+<div class="g-section">
+  <div class="g-label">NYCTA §4.2 Disc Sizes — Three Sizes Only <span>nav 20px · board 34px · hero 64px</span></div>
+  <div class="g-row" style="align-items:center;">
+    <div style="border:1px solid var(--line);background:var(--panel);padding:16px;display:flex;align-items:center;gap:16px;">
+      <span class="disc disc--nav" style="background:var(--rt-orange);">R</span>
+      <span style="font-size:10px;color:var(--ink-3);">nav / inline / legend<br>18–20px</span>
+    </div>
+    <div style="border:1px solid var(--line);background:var(--panel);padding:16px;display:flex;align-items:center;gap:16px;">
+      <span class="disc disc--board" style="background:var(--rt-orange);">R</span>
+      <span style="font-size:10px;color:var(--ink-3);">board header / plate<br>32–36px</span>
+    </div>
+    <div style="border:1px solid var(--line);background:var(--panel);padding:16px;display:flex;align-items:center;gap:16px;">
+      <span class="disc disc--hero" style="background:var(--rt-orange);">R</span>
+      <span style="font-size:10px;color:var(--ink-3);">hero / cover<br>56–72px</span>
+    </div>
+    <div style="border:1px solid var(--line);background:var(--panel);padding:16px;display:flex;align-items:center;gap:16px;">
+      <span class="disc disc--board disc--hub">D</span>
+      <span style="font-size:10px;color:var(--ink-3);">hub disc<br>ink background</span>
+    </div>
+  </div>
+  <div class="g-note">The disc is the only sanctioned curved shape — coded wayfinding token, not decoration. Always a glyph inside. Always full color (active state goes on the label, not the disc). Order is fixed and meaningful.</div>
+</div>
+
+
+<!-- ════ §11 STATION PLATE ════ -->
+<div class="g-section">
+  <div class="g-label">NYCTA §5 Station Plate — Board Header <span>disc + code + name + 2px trunk-color rule</span></div>
+
+  <div style="border:1px solid var(--line);background:var(--panel);padding:22px;">
+    <!-- Orange: Macro board -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:13px;border-bottom:2px solid var(--rt-orange);margin-bottom:20px;">
+      <div style="display:flex;align-items:center;gap:13px;">
+        <span class="disc disc--board" style="background:var(--rt-orange);">R</span>
+        <div>
+          <div style="font-size:9px;letter-spacing:0.18em;color:var(--ink-3);font-weight:600;">MACRO 03</div>
+          <div style="font-size:22px;font-weight:600;margin-top:1px;">Regime</div>
+        </div>
+      </div>
+      <div style="font-size:10px;color:var(--ink-3);letter-spacing:0.06em;text-align:right;line-height:1.7;">LIVE · INSTRUMENT<br>2026-06-27 · UTC+7</div>
+    </div>
+    <div class="grid-hair" style="grid-template-columns:repeat(4,1fr);">
+      <div style="padding:11px 14px;"><div class="stat-lbl">Growth</div><div class="stat-val">2.1%</div></div>
+      <div style="padding:11px 14px;"><div class="stat-lbl">Inflation</div><div class="stat-val" style="color:var(--neg);">3.7%</div></div>
+      <div style="padding:11px 14px;"><div class="stat-lbl">Yield 10Y</div><div class="stat-val">4.31%</div></div>
+      <div style="padding:11px 14px;"><div class="stat-lbl">DXY</div><div class="stat-val">104.2</div></div>
+    </div>
+  </div>
+
+  <div style="border:1px solid var(--line);background:var(--panel);padding:22px;margin-top:1px;">
+    <!-- Blue: Markets board -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:13px;border-bottom:2px solid var(--rt-blue);margin-bottom:20px;">
+      <div style="display:flex;align-items:center;gap:13px;">
+        <span class="disc disc--board" style="background:var(--rt-blue);">M</span>
+        <div>
+          <div style="font-size:9px;letter-spacing:0.18em;color:var(--ink-3);font-weight:600;">MARKETS 01</div>
+          <div style="font-size:22px;font-weight:600;margin-top:1px;">Live Markets</div>
+        </div>
+      </div>
+      <div style="font-size:10px;color:var(--ink-3);letter-spacing:0.06em;text-align:right;line-height:1.7;">47 feeds · 2.3s lag</div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-2);margin:0;">The trunk-color rule under the header is the only place the trunk color appears as a horizontal element. Below it, the board reverts entirely to the mono Rams system.</p>
+  </div>
+
+  <div class="g-note">One trunk-color rule per board. At the header only. Never repeat it inside the board body. Below the plate: pure Rams mono. The color has done its job (identification) and steps aside.</div>
+</div>
+
+
+<!-- ════ §12 NAV DISC STRIP ════ -->
+<div class="g-section">
+  <div class="g-label">NYCTA §4 Nav Disc Strip <span>address bar · glyph + label · trunk color stable</span></div>
+  <div style="border:1px solid var(--line-2);background:var(--paper);padding:11px 16px;display:flex;align-items:center;gap:4px;overflow-x:auto;">
+    <!-- Hub -->
+    <span class="disc disc--nav disc--hub" style="margin-right:14px;">D</span>
+    <!-- Trunk: Blue — Markets -->
+    <a href="#" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--rt-blue);">
+      <span class="disc disc--nav" style="background:var(--rt-blue);">M</span>
+      <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Markets</span>
+    </a>
+    <a href="#" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;text-decoration:none;color:var(--ink-2);">
+      <span class="disc disc--nav" style="background:var(--rt-blue);">L</span>
+      <span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Live</span>
+    </a>
+    <!-- Trunk: Orange — Macro -->
+    <a href="#" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;text-decoration:none;color:var(--ink-2);margin-left:8px;">
+      <span class="disc disc--nav" style="background:var(--rt-orange);">R</span>
+      <span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Regime</span>
+    </a>
+    <a href="#" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;text-decoration:none;color:var(--ink-2);">
+      <span class="disc disc--nav" style="background:var(--rt-orange);">S</span>
+      <span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">States</span>
+    </a>
+    <!-- Trunk: Green — Money -->
+    <a href="#" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;text-decoration:none;color:var(--ink-2);margin-left:8px;">
+      <span class="disc disc--nav" style="background:var(--rt-green);">B</span>
+      <span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Buys</span>
+    </a>
+    <a href="#" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;text-decoration:none;color:var(--ink-2);">
+      <span class="disc disc--nav" style="background:var(--rt-green);">P</span>
+      <span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Portfolio</span>
+    </a>
+  </div>
+  <div class="g-note">Active board: bottom border in its trunk color. Inactive: no border. The disc never dims for active state — the color is the map and must stay legible. Glyph + color is a stable address. Once assigned, never moves.</div>
+</div>
+
+
+<!-- ════ §13 NYCTA ARROW ════ -->
+<div class="g-section">
+  <div class="g-label">NYCTA §6 The Arrow <span>solid equilateral triangle · CSS-drawn · no unicode</span></div>
+  <div class="g-row" style="align-items:center;">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);padding:11px 14px;background:var(--panel);">
+      ALL MARKETS
+      <span style="display:inline-block;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:7px solid currentColor;"></span>
+    </div>
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--rt-green);border:1px solid var(--line);padding:11px 14px;background:var(--panel);">
+      BUYS BOARD
+      <span style="display:inline-block;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:7px solid currentColor;"></span>
+    </div>
+    <div style="font-size:11px;color:var(--ink-3);border:1px solid var(--line);padding:11px 14px;background:var(--panel);">
+      CSS: <code style="font-size:10px;">border-top:4px solid transparent;<br>border-bottom:4px solid transparent;<br>border-left:7px solid currentColor;</code>
+    </div>
+  </div>
+  <div class="g-note">The arrow takes trunk color ONLY when it points to a specific board. Grey by default (directional, not identity). Single solid triangle. Never double-arrows, outlined arrows, or rounded arrowheads.</div>
+</div>
+
+
+<!-- ════ §14 DECISION TREE ════ -->
+<div class="g-section">
+  <div class="g-label">Decision Tree — Should This Be Colored? <span>run top to bottom · stop at first match</span></div>
+  <div style="border:1px solid var(--line);background:var(--panel);">
+    <div style="padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:16px;">
+      <span style="font-size:11px;font-weight:700;color:var(--accent);width:80px;flex-shrink:0;">DATA?</span>
+      <span style="font-size:12px;line-height:1.5;color:var(--ink-2);">Value whose state matters (up/down/live) → bare <code>--accent</code> / <code>--neg</code>. No disc.</span>
+    </div>
+    <div style="padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:16px;">
+      <span style="font-size:11px;font-weight:700;color:var(--rt-blue);width:80px;flex-shrink:0;">IDENTITY?</span>
+      <span style="font-size:12px;line-height:1.5;color:var(--ink-2);">Which board / family / route → enclose it. Disc or station-plate rule, trunk color from §3.</span>
+    </div>
+    <div style="padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:16px;">
+      <span style="font-size:11px;font-weight:700;color:var(--ink-3);width:80px;flex-shrink:0;">DIRECTION?</span>
+      <span style="font-size:12px;line-height:1.5;color:var(--ink-2);">Go here / more → greyscale solid triangle. Color only if pointing to one specific board.</span>
+    </div>
+    <div style="padding:14px 16px;background:var(--paper);display:flex;gap:16px;">
+      <span style="font-size:11px;font-weight:700;color:var(--neg);width:80px;flex-shrink:0;">NONE?</span>
+      <span style="font-size:12px;line-height:1.5;color:var(--ink-2);">No color. Use grey + size. If you're adding color "to liven it up" — delete it.</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<div style="margin-top:64px;padding-top:22px;border-top:1px solid var(--line);display:flex;align-items:baseline;justify-content:space-between;">
+  <div style="font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);">Rams × NYCTA Design Core</div>
+  <div style="font-size:9px;color:var(--ink-3);">axiom.nonarkara.org · Non Arkaraprasertkul</div>
+</div>
+
+</body>
+</html>
