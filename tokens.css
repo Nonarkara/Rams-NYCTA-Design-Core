@@ -73,11 +73,19 @@
   --max-w-app:   960px;   /* focused app           */
   --max-w-doc:   720px;   /* reading / document    */
 
-  /* §6 Motion */
-  --t-state: 120ms;   /* state transitions ≤150ms */
-  --ease:    ease;
-  /* Allowed: state changes, the status pulse, counting values.     */
-  /* Banned: entrance animations, scroll reveals, parallax, bounce. */
+  /* §6 Motion (v1.1 — craft pass, see RAMS-DESIGN-DNA.md §6) */
+  /* Sourced from Emil Kowalski's design-eng skill + impeccable's
+     motion reference. Same restraint, real curves instead of the
+     browser default — flat "ease" everywhere is itself a tell.  */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);   /* entrances, reveals */
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);  /* on-screen movement */
+  --ease-hover:  ease;                              /* hover / color shift */
+  /* Bounce/elastic curves remain hard-banned — §8. */
+
+  --t-press:  100ms;  /* button/control press feedback */
+  --t-state:  150ms;  /* hover, toggle, small state change (was 120ms) */
+  --t-layout: 250ms;  /* panel/drawer/expand */
+  --ease: var(--ease-hover); /* legacy alias, existing components keep working */
 
 
   /* ── LAYER 2: NYCTA ROUTE PALETTE ──────────────────────── */
@@ -120,8 +128,18 @@ body {
 ::selection { background: var(--accent); color: #fff; }
 :focus-visible { outline: 1px solid var(--ink); outline-offset: 2px; }
 
-/* ── LIVE PULSE — the only sanctioned animation ────────────── */
+/* ── LIVE PULSE — the only sanctioned continuous animation ─── */
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .2; } }
+
+/* ── REDUCED MOTION ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 /* ── UTILITY: WRAP ─────────────────────────────────────────── */
 .wrap      { max-width: var(--max-w-tool); margin: 0 auto; padding: 0 var(--outer-pad); }
@@ -158,12 +176,23 @@ body {
 .bar--neg    .bar__fill { background: var(--neg); }
 
 /* ── UTILITY: BUTTONS ──────────────────────────────────────── */
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--ink); cursor: pointer; transition: opacity var(--t-state) var(--ease); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--ink); cursor: pointer; transition: background var(--t-state) var(--ease-hover), color var(--t-state) var(--ease-hover), border-color var(--t-state) var(--ease-hover), transform var(--t-press) var(--ease-out); }
 .btn--primary { background: var(--ink); color: var(--paper); }
 .btn--accent  { background: var(--accent); color: #fff; border-color: var(--accent); }
 .btn--ghost   { background: transparent; color: var(--ink); }
 .btn--primary:hover, .btn--accent:hover { opacity: .88; }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+/* Press feedback — the control must feel heard, not just read. */
+.btn:active { transform: scale(0.97); }
+
+/* ── UTILITY: ORIGIN-AWARE OVERLAY (popover / tooltip) ─────── */
+/* Scale in FROM the trigger, never from center — center-scale is
+   correct only for true modals (leave --overlay-origin unset there). */
+.overlay-pop {
+  transform-origin: var(--overlay-origin, center);
+  transition: transform var(--t-state) var(--ease-out), opacity var(--t-state) var(--ease-out);
+}
+.overlay-pop[data-state="closed"] { opacity: 0; transform: scale(0.96); }
 
 /* ── UTILITY: LIVE DOT ─────────────────────────────────────── */
 .dot-live { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block; animation: blink 2.4s ease-in-out infinite; }

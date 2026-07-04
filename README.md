@@ -253,7 +253,7 @@ When building any surface from this system:
 - Pure `#000` or pure `#fff`
 - Font weights 700+ on data; more than one type family
 - Centering dense content
-- Entrance animations, scroll reveals, parallax, bouncing eases
+- Entrance animations, scroll reveals, parallax; bounce/elastic easing (always). Real easing curves and press feedback are expected now — see `RAMS-DESIGN-DNA.md` §6.
 - Bare colored text in content that is not data-signal green/red
 - More than ~5 trunk families visible at once
 - A unique color per board (use trunk families + glyphs)

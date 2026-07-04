@@ -260,8 +260,16 @@ The **only** sanctioned animation: a slow status pulse. No slides, no fades-in-o
 
 ## 6. Motion
 
-- Motion is feedback, not entertainment. Allowed: state changes (≤150ms, ease), the status pulse (§4.9), a value counting to its number.
-- Banned: entrance animations, scroll-triggered reveals, parallax, decorative loops, easing that "bounces".
+**v1.1.** Motion is feedback, not entertainment — unchanged. What changed is craft: real easing curves instead of the browser default, because a flat `ease` on everything is itself a tell of an unfinished system. Framework adapted from [emilkowalski/skills](https://github.com/emilkowalski/skills) and [pbakaus/impeccable](https://github.com/pbakaus/impeccable) — credited per the steal-and-improve rule.
+
+- **Pick the curve by what's happening**, not by habit: entering/exiting → `--ease-out` (`cubic-bezier(0.23,1,0.32,1)`); moving on screen → `--ease-in-out` (`cubic-bezier(0.77,0,0.175,1)`); hover/color → `--ease-hover` (plain `ease` is correct *here*, nowhere else).
+- **Durations, tiered:** press feedback 100ms (`--t-press`), state change 150ms (`--t-state`), layout-level change 250ms (`--t-layout`). Nothing UI-facing above 300ms.
+- **Buttons get press feedback:** `transform: scale(0.97)` on `:active`. A control with no press state reads as dead, regardless of how correct its hover state is.
+- **Popovers scale from their trigger**, never from center — center-scale is for true modals only, which have no single trigger.
+- **Never entrance from `scale(0)`.** Start at `scale(0.95)` + `opacity: 0` — nothing in the physical world disappears to nothing.
+- Allowed beyond the above: the status pulse (§4.9), a value counting to its number.
+- Banned everywhere: entrance choreography, scroll-triggered reveals, parallax, decorative loops, easing that bounces or "elastics", animation on a keyboard-triggered action.
+- **On looking templated:** this palette (warm off-white ground, Inter) is disciplined by design, and disciplined-by-design is also what a thousand AI-generated dashboards now default to for the same reasons. The antidote isn't novelty — it's finishing the craft this manual actually asks for: real curves, real press feedback, real data, honestly shown. A generic build skips exactly these details.
 
 ---
 
