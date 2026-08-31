@@ -228,6 +228,8 @@ Keep the **fewest instruments needed to operate safely** permanently in view. Ev
 | `assets/illustrations/` | **Drop illustrations here.** See `assets/illustrations/README.md`. |
 | `assets/photos/` | Photos and reference sheets. |
 | `assets/diagrams/` | Drop diagrams here. |
+| `LICENSE` | MIT license for **original** code and original writing only. |
+| `NOTICE.md` | Third-party rights this repo does **not** grant (Rams, NYCTA/MTA/Unimark, typefaces). |
 
 ---
 
@@ -277,3 +279,11 @@ The sanctioned illustration style: **[Xiaohei by Ian Neo](https://github.com/hel
 > *"The fun is in the flow."* — Non Arkaraprasertkul
 
 *Non Arkaraprasertkul · axiom.nonarkara.org*
+
+---
+
+## License
+
+Original software and original writing in this repository are under the [MIT License](LICENSE).
+
+This is **not** an official Rams, Braun, Vitsœ, Unimark, NYCTA, or MTA product. The 1970 NYCTA Graphics Standards Manual, official MTA wayfinding identity, and Rams/Vitsœ/Braun materials keep their own rights — this MIT grant does not relicense them. See [NOTICE.md](NOTICE.md).
