@@ -6,7 +6,22 @@
 
 **By:** Non Arkaraprasertkul — architect, anthropologist, decision-systems builder  
 **Lineage:** Dieter Rams (Braun, 1950–1995) × Bob Noorda & Massimo Vignelli / Unimark International (NYCTA, 1970)  
-**What this is:** A reproduction-grade interface standard — exact values, not vibes — extended with the philosophical substrate that drives why these systems matter.
+**Use:** Throw this repo at any agent — Claude Code, Cursor, Cline, Continue, Aider, Windsurf, GPT, or any other. The 5-line spine is in [`AGENTS.md`](AGENTS.md). Install steps for every agent type in [`USAGE.md`](USAGE.md).  
+**What this is:** A reproduction-grade interface standard — exact values, not vibes — extended with the philosophical substrate that drives why these systems matter.  
+**License:** MIT for original work — see [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md) for what is and is not relicensed.
+
+---
+
+## Start here
+
+| If you are… | Read |
+|---|---|
+| An **AI agent** (Claude, Cursor, Cline, Aider, etc.) | [`AGENTS.md`](AGENTS.md) — the 5-line DNA. |
+| **Installing** in your project / agent | [`USAGE.md`](USAGE.md) — install steps per agent type. |
+| Looking for the **full operating standard** | [`RAMS-DESIGN-DNA.md`](RAMS-DESIGN-DNA.md) + [`RAMS-x-NYCTA-DNA.md`](RAMS-x-NYCTA-DNA.md). |
+| A **human** wanting a quick read | This README, then [`tokens.css`](tokens.css) to drop in. |
+
+The four habits that make every Rams × NYCTA surface land: **balanced, compact, no non-sense, communicative.** They are the taste layer below the rules — see [`AGENTS.md`](AGENTS.md) §4 for the full text.
 
 ![Dr Non's Dieter Rams in NYC Metro Design Core — RAMS + NYCTA = DESIGN CORE](assets/photos/rams-nycta-concept-01.png)
 
@@ -235,15 +250,17 @@ Keep the **fewest instruments needed to operate safely** permanently in view. Ev
 
 ## For Agents
 
-When building any surface from this system:
+The full agent guide is in [`AGENTS.md`](AGENTS.md) — it gives any AI agent (Claude Code, Cursor, Cline, Continue, Aider, Windsurf, GPT, Copilot) the 5-line DNA + the two layers + the colour decision tree + the hard bans + the checklist. Install steps for every agent type are in [`USAGE.md`](USAGE.md).
 
-1. **Identify the layer:** Does this product have multiple navigable boards? If yes → Layer 2 (NYCTA). If one view → Layer 1 (Rams only) is sufficient.
-2. **Apply the token block** from `tokens.css`.
-3. **Run the decision tree** before adding any color.
-4. **Apply the cockpit pattern** if the product has live data.
-5. **Check provenance** — every metric needs source + date/time.
-6. **Name the suffering** (Four Noble Truths step 1) before naming the components.
-7. **Remove one thing** before marking the task complete.
+Quick path for any agent:
+
+1. Read [`AGENTS.md`](AGENTS.md) — the spine.
+2. Identify the layer: Rams-only (single view) or Rams + NYCTA (multi-board).
+3. Run the colour decision tree from `AGENTS.md` §3 before adding any colour.
+4. Apply the token block from [`tokens.css`](tokens.css).
+5. Apply the cockpit pattern if the product has live data.
+6. Check provenance — every metric needs source + date/time.
+7. Remove one thing before marking the task complete.
 
 ---
 
