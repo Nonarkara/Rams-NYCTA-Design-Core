@@ -15,7 +15,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#faf9f7">
   <title>[Product Name]</title>
   <meta name="description" content="[Under 155 chars. Factual. No adjectives.]">
 
@@ -165,6 +168,61 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--ink-3);
+    }
+
+    /* ── Responsive: 600px (small tablet / iPad portrait edge) ─────────── */
+    @media (max-width: 600px) {
+      .page { padding: 0 16px; }
+      .board { padding: 22px 0 32px; }
+
+      /* Cockpit nav: horizontal scroll for many disc-links on phone */
+      .cockpit__nav {
+        padding: 0 16px;
+        height: auto;
+        min-height: 52px;
+        overflow-x: auto;
+        flex-wrap: wrap;
+        row-gap: 4px;
+      }
+      .cockpit__hub { margin-right: 8px; }
+
+      /* Vitals: tighten gap and keep wrap */
+      .cockpit__vitals { padding: 6px 16px; gap: 14px; }
+
+      /* Station plate: stack identity + meta on phone */
+      .station { flex-direction: column !important; align-items: flex-start !important; gap: 4px; padding-bottom: 10px; }
+      .station__meta { text-align: left !important; }
+
+      /* Board content grids: 4→2, 3→1, 2→1 */
+      .board [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+      .board [style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+      .board [style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+
+      /* Status plate inside board: stack identity block + body on phone */
+      .board [style*="display:flex;align-items:stretch"] {
+        flex-direction: column !important;
+      }
+      .board [style*="display:flex;align-items:stretch"] > div:first-child {
+        padding: 10px 16px !important;
+      }
+
+      /* Button row inside board: wrap on phone */
+      .board [style*="display:flex;gap:12px;margin-top:4px"] {
+        flex-wrap: wrap !important; row-gap: 10px;
+      }
+    }
+
+    /* ── Responsive: 900px (iPad landscape / unfolded foldable) ─────────── */
+    @media (min-width: 900px) {
+      .board [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(4, 1fr) !important; }
+    }
+
+    /* ── Touch target + motion safety ──────────────────────────────────── */
+    @media (hover: none) and (pointer: coarse) {
+      a, button, .disc-link, .cockpit__hub { min-height: 44px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
   </style>
 </head>

@@ -4,6 +4,8 @@
 > Information at the point of decision. Never before. Never after.  
 > When the color system makes itself invisible as "design" — it is finished.
 
+> **Tuned for iPad and foldable.** Open `components.html` on iPad mini (768) or an unfolded Galaxy Z Fold (840) — the sticky §-index appears at the left, the 5-up color grid and 9-up route palette stay full-width, and every tap target clears 44px. Phone-width viewports still render cleanly; the index hides and grids reflow to 3-up. Touch-target + reduced-motion safety rules are baked in.
+
 **By:** Non Arkaraprasertkul — architect, anthropologist, decision-systems builder  
 **Lineage:** Dieter Rams (Braun, 1950–1995) × Bob Noorda & Massimo Vignelli / Unimark International (NYCTA, 1970)  
 **Use:** Throw this repo at any agent — Claude Code, Cursor, Cline, Continue, Aider, Windsurf, GPT, or any other. The 5-line spine is in [`AGENTS.md`](AGENTS.md). Install steps for every agent type in [`USAGE.md`](USAGE.md).  

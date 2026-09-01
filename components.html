@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#faf9f7">
   <title>Rams × NYCTA — Component Gallery</title>
   <link rel="stylesheet" href="tokens.css">
   <style>
-    body { padding: 44px 22px; max-width: 1100px; margin: 0 auto; }
+    body {
+      padding: 44px 22px; max-width: 1100px; margin: 0 auto;
+      padding-left: max(22px, env(safe-area-inset-left));
+      padding-right: max(22px, env(safe-area-inset-right));
+    }
 
     /* Gallery scaffolding */
     .g-section { margin-bottom: 64px; }
@@ -14,6 +21,7 @@
       font-size: 9px; font-weight: 700; letter-spacing: 0.20em; text-transform: uppercase;
       color: var(--ink-3); border-bottom: 1px solid var(--line); padding-bottom: 8px;
       margin-bottom: 22px; display: flex; align-items: baseline; justify-content: space-between;
+      gap: 10px; flex-wrap: wrap;
     }
     .g-label span { font-weight: 500; letter-spacing: 0; color: var(--ink-3); font-size: 10px; text-transform: none; }
     .g-row { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-start; }
@@ -21,12 +29,138 @@
     .g-note { font-size: 10px; color: var(--ink-3); margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line); font-style: italic; }
 
     /* Masthead */
-    .masthead { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 22px; margin-bottom: 44px; border-bottom: 2px solid var(--ink); }
+    .masthead { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 22px; margin-bottom: 44px; border-bottom: 2px solid var(--ink); gap: 16px; flex-wrap: wrap; }
     .masthead__title { font-size: 22px; font-weight: 600; }
     .masthead__meta { font-size: var(--t-micro); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+
+    /* Section index — sticky on iPad+ only (hidden on phone, room for it on tablet) */
+    .g-index {
+      display: none;
+      position: sticky;
+      top: 16px;
+      z-index: 5;
+      align-self: flex-start;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      border: 1px solid var(--line-2);
+      background: var(--paper);
+      padding: 14px 16px;
+      width: 168px;
+      flex-shrink: 0;
+    }
+    .g-index__title { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; color: var(--ink-3); padding-bottom: 8px; margin-bottom: 10px; border-bottom: 1px solid var(--line); }
+    .g-index ol { list-style: none; padding: 0; margin: 0; counter-reset: gidx; }
+    .g-index li { counter-increment: gidx; padding: 4px 0; }
+    .g-index li::before { content: "§" counter(gidx) "  "; color: var(--ink-3); }
+    .g-index a { color: var(--ink-2); text-decoration: none; }
+    .g-index a:hover { color: var(--ink); }
+
+    /* Two-col layout: index + main, only on iPad+ */
+    .g-layout {
+      display: block;
+    }
+    .g-main { min-width: 0; }
+
+    /* ── Responsive: 600px (small tablet / iPad portrait edge) ─────────── */
+    @media (max-width: 600px) {
+      body { padding: 24px 16px; }
+      .g-section { margin-bottom: 44px; }
+      .g-row { gap: 16px; }
+      .g-col { min-width: 0; flex-basis: 100%; }
+      .masthead { margin-bottom: 28px; padding-bottom: 16px; }
+
+      /* Origin-aware overlay: let the demo text wrap on phone so it never triggers document overflow */
+      .overlay-pop { white-space: normal !important; max-width: 70vw !important; }
+
+      /* Section grids: 5→3, 9→3, 4→2 */
+      .g-section [style*="grid-template-columns:repeat(5,1fr)"] { grid-template-columns: repeat(3, 1fr) !important; }
+      .g-section [style*="grid-template-columns:repeat(9,1fr)"] { grid-template-columns: repeat(3, 1fr) !important; }
+      .g-section [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+
+      /* Station plate: stack identity + meta on phone */
+      .g-section > div > div[style*="display:flex;align-items:center;justify-content:space-between"] {
+        flex-direction: column !important; align-items: flex-start !important; gap: 6px !important;
+      }
+      .g-section > div > div[style*="display:flex;align-items:center;justify-content:space-between"] > div:last-child {
+        text-align: left !important;
+      }
+
+      /* Status plate: stack identity block + body on phone */
+      .g-section > div > div[style*="display:flex;align-items:stretch"] {
+        flex-direction: column !important;
+      }
+      .g-section > div > div[style*="display:flex;align-items:stretch"] > div:first-child {
+        padding: 10px 16px !important;
+      }
+
+      /* Decision tree rows: stack label + value on phone */
+      .g-section [style*="padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:16px"] {
+        flex-direction: column !important; gap: 4px !important;
+      }
+
+      /* Nav disc strip: wrap on phone so children don't trigger document overflow */
+      .g-section [style*="overflow-x:auto"] {
+        flex-wrap: wrap !important;
+        overflow-x: visible !important;
+        row-gap: 6px !important;
+      }
+    }
+
+    /* ── Responsive: 768px (iPad portrait — sticky section index appears) ── */
+    @media (min-width: 768px) {
+      .g-layout { display: grid; grid-template-columns: 168px 1fr; align-items: start; gap: 28px; }
+      .g-index { display: block; }
+      .g-main { min-width: 0; }
+      /* Grid/flex containers with inline 1fr or auto columns have implicit min-width: auto.
+         Force them to 0 so the g-main can fill the grid column. */
+      .g-main [style*="grid-template-columns"] { min-width: 0; }
+      .g-main [style*="grid-template-columns"] > * { min-width: 0; }
+      .g-main [style*="display:flex"] { min-width: 0; }
+      .g-main [style*="display:flex"] > * { min-width: 0; }
+    }
+
+    /* ── Responsive: 900px (iPad landscape / unfolded foldable) ─────────── */
+    @media (min-width: 900px) {
+      .g-section [style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: repeat(4, 1fr) !important; }
+      .g-section [style*="grid-template-columns:repeat(9,1fr)"] { grid-template-columns: repeat(5, 1fr) !important; }
+    }
+
+    /* ── Touch target + motion safety ──────────────────────────────────── */
+    @media (hover: none) and (pointer: coarse) {
+      a, button { min-height: 44px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
   </style>
 </head>
 <body>
+
+<div class="g-layout">
+  <aside class="g-index" aria-label="Section index">
+    <div class="g-index__title">§ Index</div>
+    <ol>
+      <li><a href="#color">Color System</a></li>
+      <li><a href="#nycta-routes">NYCTA Routes</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#section-header">Section Header</a></li>
+      <li><a href="#cell-grid">Cell Grid</a></li>
+      <li><a href="#data-row">Data Row</a></li>
+      <li><a href="#bar-meter">Bar / Meter</a></li>
+      <li><a href="#status-plate">Status Plate</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#motion">Motion</a></li>
+      <li><a href="#disc-sizes">Disc Sizes</a></li>
+      <li><a href="#station-plate">Station Plate</a></li>
+      <li><a href="#nav-strip">Nav Strip</a></li>
+      <li><a href="#arrow">Arrow</a></li>
+      <li><a href="#decision-tree">Decision Tree</a></li>
+    </ol>
+  </aside>
+  <div class="g-main">
 
 <div class="masthead">
   <div>
@@ -41,7 +175,7 @@
 
 
 <!-- ════ §1 COLOR SYSTEM ════ -->
-<div class="g-section">
+<div class="g-section" id="color">
   <div class="g-label">§1 Color — Warm-Neutral Near-Monochrome <span>greyscale + one signal + one neg</span></div>
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
     <div style="background:var(--paper);padding:13px 11px;border:1px solid var(--line-2);">
@@ -92,7 +226,7 @@
 
 
 <!-- ════ §2 NYCTA ROUTE PALETTE ════ -->
-<div class="g-section">
+<div class="g-section" id="nycta-routes">
   <div class="g-label">NYCTA Route Palette — The 8 Trunk Colors + Hub <span>§3 RAMS-x-NYCTA-DNA · closed set, never add a 9th</span></div>
   <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
     <div style="background:var(--rt-blue);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
@@ -137,7 +271,7 @@
 
 
 <!-- ════ §3 TYPOGRAPHY ════ -->
-<div class="g-section">
+<div class="g-section" id="typography">
   <div class="g-label">§2 Typography — Helvetica Neue lineage <span>tabular figures · weight ceiling 600 · tracking scales inversely with size</span></div>
   <div style="border:1px solid var(--line);background:var(--panel);">
     <div style="padding:18px 20px;border-bottom:1px solid var(--line);">
@@ -165,7 +299,7 @@
 
 
 <!-- ════ §4 SECTION HEADER ════ -->
-<div class="g-section">
+<div class="g-section" id="section-header">
   <div class="g-label">§4.1 Section Header <span>ink rule · 700/0.16em · right-aligned meta</span></div>
   <div style="border:1px solid var(--line);background:var(--panel);padding:20px;">
     <div class="s-head" style="margin-bottom:14px;">
@@ -178,7 +312,7 @@
 
 
 <!-- ════ §5 HAIRLINE CELL GRID ════ -->
-<div class="g-section">
+<div class="g-section" id="cell-grid">
   <div class="g-label">§3.2 Hairline Cell Grid — The Signature Move <span>background:var(--line); gap:1px; white cells</span></div>
   <div class="grid-hair" style="grid-template-columns:repeat(4,1fr);">
     <div style="padding:13px 16px;"><div class="stat-lbl">Markets</div><div class="stat-val">47</div><div class="stat-sub">feeds active</div></div>
@@ -196,7 +330,7 @@
 
 
 <!-- ════ §6 DATA ROW ════ -->
-<div class="g-section">
+<div class="g-section" id="data-row">
   <div class="g-label">§4.3 Data Row — Label · Value · Delta <span>right-align numbers · fixed-width delta column</span></div>
   <div class="g-row">
     <div class="g-col">
@@ -240,7 +374,7 @@
 
 
 <!-- ════ §7 BAR / METER ════ -->
-<div class="g-section">
+<div class="g-section" id="bar-meter">
   <div class="g-label">§4.4 Bar / Meter + §4.5 Stacked Allocation <span>flat track · solid fill · square ends · no radius · no gradient</span></div>
   <div class="g-row">
     <div class="g-col">
@@ -289,7 +423,7 @@
 
 
 <!-- ════ §8 STATUS PLATE ════ -->
-<div class="g-section">
+<div class="g-section" id="status-plate">
   <div class="g-label">§4.6 Status Plate — The Black Sign-Plate <span>left identity block · body · right meta</span></div>
   <div style="display:flex;flex-direction:column;gap:1px;">
     <div style="display:flex;align-items:stretch;border:1px solid var(--line-2);background:var(--panel);">
@@ -316,7 +450,7 @@
 
 
 <!-- ════ §9 BUTTONS + LIVE DOT ════ -->
-<div class="g-section">
+<div class="g-section" id="buttons">
   <div class="g-label">§4.7 Buttons · §4.9 Live Indicator <span>square · 700 · UPPERCASE · one animation only</span></div>
   <div class="g-row" style="align-items:center;">
     <button class="btn btn--primary">View positions
@@ -340,7 +474,7 @@
 
 
 <!-- ════ §6 MOTION & FEEDBACK — no JS build step, try it live ════ -->
-<div class="g-section">
+<div class="g-section" id="motion">
   <div class="g-label">§6 Motion & Feedback <span>real easing curves · press feedback · origin-aware overlay</span></div>
   <div class="g-row" style="align-items:flex-start; gap:32px;">
 
@@ -367,7 +501,7 @@
 
 
 <!-- ════ §10 NYCTA DISC SIZES ════ -->
-<div class="g-section">
+<div class="g-section" id="disc-sizes">
   <div class="g-label">NYCTA §4.2 Disc Sizes — Three Sizes Only <span>nav 20px · board 34px · hero 64px</span></div>
   <div class="g-row" style="align-items:center;">
     <div style="border:1px solid var(--line);background:var(--panel);padding:16px;display:flex;align-items:center;gap:16px;">
@@ -392,7 +526,7 @@
 
 
 <!-- ════ §11 STATION PLATE ════ -->
-<div class="g-section">
+<div class="g-section" id="station-plate">
   <div class="g-label">NYCTA §5 Station Plate — Board Header <span>disc + code + name + 2px trunk-color rule</span></div>
 
   <div style="border:1px solid var(--line);background:var(--panel);padding:22px;">
@@ -435,7 +569,7 @@
 
 
 <!-- ════ §12 NAV DISC STRIP ════ -->
-<div class="g-section">
+<div class="g-section" id="nav-strip">
   <div class="g-label">NYCTA §4 Nav Disc Strip <span>address bar · glyph + label · trunk color stable</span></div>
   <div style="border:1px solid var(--line-2);background:var(--paper);padding:11px 16px;display:flex;align-items:center;gap:4px;overflow-x:auto;">
     <!-- Hub -->
@@ -473,7 +607,7 @@
 
 
 <!-- ════ §13 NYCTA ARROW ════ -->
-<div class="g-section">
+<div class="g-section" id="arrow">
   <div class="g-label">NYCTA §6 The Arrow <span>solid equilateral triangle · CSS-drawn · no unicode</span></div>
   <div class="g-row" style="align-items:center;">
     <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);padding:11px 14px;background:var(--panel);">
@@ -493,7 +627,7 @@
 
 
 <!-- ════ §14 DECISION TREE ════ -->
-<div class="g-section">
+<div class="g-section" id="decision-tree">
   <div class="g-label">Decision Tree — Should This Be Colored? <span>run top to bottom · stop at first match</span></div>
   <div style="border:1px solid var(--line);background:var(--panel);">
     <div style="padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:16px;">
