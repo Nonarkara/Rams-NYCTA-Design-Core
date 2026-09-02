@@ -169,7 +169,7 @@ If you symlinked, the symlink resolves on every load — no re-copy needed.
 
 ## 6. What is and is not licensed
 
-This repo is **MIT-licensed for original work** authored by Dr Non — original software (`tokens.css`, `components.html`, `quick-start.html`), original writing (DNA docs, philosophy, recipes), and original concept sheets.
+This repo is **MIT-licensed for original work** authored by Dr Non — original software (`tokens.css`, `components.html`, `quick-start.html`), original writing (DNA docs, philosophy, recipes), original concept sheets, and the original hero illustration `docs/hero-banner.png`.
 
 This repo is **not** an official Rams, Braun, Vitsœ, Unimark, NYCTA, or MTA product. It does not license third-party design documents, trademarks, typefaces, or identity systems. Using this interface toolkit does not give you rights in those source materials.
 

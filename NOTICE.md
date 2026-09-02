@@ -4,8 +4,9 @@ The [MIT License](LICENSE) applies **only to original work** in this repository
 authored by Non Arkaraprasertkul: original software (`tokens.css`,
 `components.html`, `quick-start.html`), original writing (including the
 philosophy, recipes, and interface interpretation in `README.md`,
-`RAMS-DESIGN-DNA.md`, and `RAMS-x-NYCTA-DNA.md`), and original concept sheets
-in `assets/photos/` created for this project.
+`RAMS-DESIGN-DNA.md`, and `RAMS-x-NYCTA-DNA.md`), original concept sheets
+in `assets/photos/` created for this project, and the original hero
+illustration `docs/hero-banner.png`.
 
 This repository is **not** an official Rams, Braun, Vitsœ, Unimark, NYCTA, or
 MTA product. The MIT grant does **not** license third-party design documents,
@@ -62,10 +63,16 @@ Drop-in illustrations, if added later under `assets/illustrations/`, remain
 under their source license. Credit them on any public surface, as
 `assets/illustrations/README.md` already requires.
 
-## Concept sheets
+## Concept sheets and hero illustration
 
 The PNGs in `assets/photos/` are original educational diagrams for this
 design core. They illustrate Rams’s principles and NYCTA-style wayfinding
 (including MTA-like route discs and a likeness of Dieter Rams). Those
 depictions do not transfer trademark, copyright, or publicity rights in the
 underlying third-party systems or people.
+
+`docs/hero-banner.png` is an original illustration for the public README.
+Transit HUD elements in that drawing — route-style discs, pictograms, line
+marks, platform scene — are atmosphere. They are not a live interface, not
+a component specification, and not official MTA or NYCTA signage. Drawing
+them here is not a license to reproduce official wayfinding artwork.
