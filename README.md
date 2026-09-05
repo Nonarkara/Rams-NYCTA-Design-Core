@@ -8,7 +8,21 @@
 **Lineage:** Dieter Rams (Braun, 1950–1995) × Bob Noorda & Massimo Vignelli / Unimark International (NYCTA, 1970)  
 **Use:** Throw this repo at any agent — Claude Code, Cursor, Cline, Continue, Aider, Windsurf, GPT, or any other. The 5-line spine is in [`AGENTS.md`](AGENTS.md). Install steps for every agent type in [`USAGE.md`](USAGE.md).  
 **What this is:** A reproduction-grade interface standard — exact values, not vibes — extended with the philosophical substrate that drives why these systems matter.  
+**Version:** 1.1 — The Operational Edition  
 **License:** MIT for original work — see [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md) for what is and is not relicensed.
+
+---
+
+## v1.1 — What changed
+
+The repo is no longer just a manifesto. It now ships the **operational layer** for any multi-board command centre built with React 19 / Vite.
+
+- **`packages/react/`** — 20 React 19 + TypeScript components, including 4 NYCTA-specific: `CockpitShell` + `Rail` + `RailItem`, `StationPlate`, `TrunkBadge`, `BoardHeader`. `import { CockpitShell, Rail, RailItem, StationPlate, … } from '@rams-nycta/core-react'`. [`README`](packages/react/README.md)
+- **`packages/audit/`** — `npx rams-nycta-audit ./apps/web` — scans for hard-bans (rounded-md, shadow-lg, gradient, font-weight 700, Unicode arrows, **a 9th trunk color**, etc.). `--strict` for CI. [`README`](packages/audit/README.md)
+- **`packages/tailwind-preset/`** — drop-in Tailwind preset that maps the closed 8-trunk palette to Tailwind colors and **removes the banned utilities**. [`README`](packages/tailwind-preset/README.md)
+- **[`WIRE-IN.md`](WIRE-IN.md)** — five-minute install + CI recipe for any multi-board product.
+
+The philosophy in [`AGENTS.md`](AGENTS.md), [`RAMS-DESIGN-DNA.md`](RAMS-DESIGN-DNA.md), and [`RAMS-x-NYCTA-DNA.md`](RAMS-x-NYCTA-DNA.md) is unchanged. v1.1 puts code on top of it.
 
 ---
 
