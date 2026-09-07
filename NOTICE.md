@@ -2,7 +2,8 @@
 
 The [MIT License](LICENSE) applies **only to original work** in this repository
 authored by Non Arkaraprasertkul: original software (`tokens.css`,
-`components.html`, `quick-start.html`), original writing (including the
+`components.html`, `quick-start.html`, and the packages under `packages/`),
+original writing (including the
 philosophy, recipes, and interface interpretation in `README.md`,
 `RAMS-DESIGN-DNA.md`, and `RAMS-x-NYCTA-DNA.md`), original concept sheets
 in `assets/photos/` created for this project, and the original hero

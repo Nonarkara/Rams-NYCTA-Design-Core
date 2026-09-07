@@ -10,7 +10,8 @@ The transit HUD in the banner — route-style discs, pictograms, platform scene 
 
 **By** Non Arkaraprasertkul — architect, anthropologist, decision-systems builder.  
 **Lineage** (inspiration, not affiliation): Dieter Rams · Bob Noorda & Massimo Vignelli / Unimark International · the 1970 NYCTA Graphics Standards Manual.  
-**This is not** an official Rams, Braun, Vitsœ, Unimark, NYCTA, or MTA product. No endorsement is claimed or implied.
+**This is not** an official Rams, Braun, Vitsœ, Unimark, NYCTA, or MTA product. No endorsement is claimed or implied.  
+**Version:** 1.1 — operational layer on the civic brief.
 
 Throw this repo at any agent. The spine is [`AGENTS.md`](AGENTS.md). Install steps are in [`USAGE.md`](USAGE.md). Original work is MIT — see [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md).
 
@@ -22,12 +23,15 @@ A **reproduction-grade interface standard** for decision UIs: exact values, not 
 
 It is a civic-studio toolkit: silence first, wayfinding only when the product has routes, provenance on every number.
 
+v1.1 adds the **operational layer** for multi-board command centres (React 19 / Vite): `packages/react/`, `packages/audit/`, `packages/tailwind-preset/`, and [`WIRE-IN.md`](WIRE-IN.md). The philosophy is unchanged. The code sits on top of it.
+
 | You get | You do not get |
 |---|---|
 | Layer 1 Rams foundation — warm-grey field, hairline grid, one typeface, one accent | Official MTA / NYCTA identity, maps, or signage artwork |
 | Layer 2 NYCTA-inspired wayfinding — closed trunk palette, disc, station plate, arrow | Rams, Braun, or Vitsœ brand assets or manuals |
 | Agent DNA, drop-in `tokens.css`, `components.html`, `quick-start.html` | A font license (Helvetica Neue is named, not shipped) |
-| Original writing and original concept sheets under MIT | A license to copy or sell the 1970 Graphics Standards Manual |
+| React components, audit CLI, Tailwind preset, five-minute wire-in | A license to copy or sell the 1970 Graphics Standards Manual |
+| Original writing and original concept sheets under MIT | Endorsement by Rams, Unimark, NYCTA, or the MTA |
 
 The four habits under the rules: **balanced, compact, no non-sense, communicative.** Full text in [`AGENTS.md`](AGENTS.md) §4.
 
@@ -35,6 +39,7 @@ The four habits under the rules: **balanced, compact, no non-sense, communicativ
 |---|---|
 | An **AI agent** | [`AGENTS.md`](AGENTS.md) — the 5-line DNA |
 | **Installing** in a project | [`USAGE.md`](USAGE.md) |
+| Wiring **React / audit / Tailwind** | [`WIRE-IN.md`](WIRE-IN.md) |
 | After the **full operating standard** | [`RAMS-DESIGN-DNA.md`](RAMS-DESIGN-DNA.md) + [`RAMS-x-NYCTA-DNA.md`](RAMS-x-NYCTA-DNA.md) |
 | A **human** wanting the public brief | This README, then [`tokens.css`](tokens.css) |
 
@@ -155,11 +160,15 @@ Keep the fewest instruments needed to operate safely in view. Everything else is
 |---|---|
 | [`AGENTS.md`](AGENTS.md) | 5-line DNA for any agent |
 | [`USAGE.md`](USAGE.md) | Install steps per agent type |
+| [`WIRE-IN.md`](WIRE-IN.md) | Five-minute React / Tailwind / audit recipe |
 | [`RAMS-DESIGN-DNA.md`](RAMS-DESIGN-DNA.md) | Rams operating standard |
 | [`RAMS-x-NYCTA-DNA.md`](RAMS-x-NYCTA-DNA.md) | Wayfinding synthesis |
 | [`tokens.css`](tokens.css) | Drop-in CSS variables |
 | [`components.html`](components.html) | Live gallery |
 | [`quick-start.html`](quick-start.html) | Cockpit + board template |
+| [`packages/react/`](packages/react/README.md) | React 19 + TypeScript components |
+| [`packages/audit/`](packages/audit/README.md) | Hard-ban scanner (`npx rams-nycta-audit`) |
+| [`packages/tailwind-preset/`](packages/tailwind-preset/README.md) | Closed trunk palette as Tailwind, banned utilities removed |
 | [`docs/hero-banner.png`](docs/hero-banner.png) | Public hero illustration (HUD = drawing only) |
 | [`assets/photos/`](assets/photos/) | Original educational concept sheets |
 | [`LICENSE`](LICENSE) | MIT for original work |
@@ -180,6 +189,8 @@ Keep the fewest instruments needed to operate safely in view. Everything else is
 7. Remove one thing before you call it done.
 
 Per-agent install: [`USAGE.md`](USAGE.md). One-shot: clone, point the agent at `AGENTS.md`. Persistent: copy `AGENTS.md` to the project root.
+
+For a multi-board React product: [`WIRE-IN.md`](WIRE-IN.md). `import { CockpitShell, StationPlate, TrunkBadge, BoardHeader } from '@rams-nycta/core-react'`. Scan with `npx rams-nycta-audit ./apps/web --strict`.
 
 ### Tokens — Layer 1 (always)
 
@@ -259,7 +270,7 @@ The Ten Principles remain the property of their rights holders. This table is an
 
 Original software and original writing in this repository are under the [MIT License](LICENSE), copyright Non Arkaraprasertkul.
 
-MIT covers: `tokens.css`, `components.html`, `quick-start.html`; original writing in the manuals and this README; original concept sheets in `assets/photos/`; the original hero illustration `docs/hero-banner.png`.
+MIT covers: `tokens.css`, `components.html`, `quick-start.html`; original writing in the manuals and this README; original concept sheets in `assets/photos/`; the original hero illustration `docs/hero-banner.png`; and the original operational packages under `packages/`.
 
 MIT does **not** cover: Rams / Braun / Vitsœ materials and trademarks; the 1970 NYCTA Graphics Standards Manual; official MTA / NYCTA wayfinding identity; commercial typefaces; third-party works credited in [`NOTICE.md`](NOTICE.md).
 

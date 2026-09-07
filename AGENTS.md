@@ -128,9 +128,11 @@ Direct. True. Economical — cut every word that carries no freight, as if you p
 | `RAMS-DESIGN-DNA.md` | The Rams operating standard — colour, type, grid, components, ten principles. |
 | `RAMS-x-NYCTA-DNA.md` | The synthesis — disc system, station plates, arrow, trunk palette, decision tree. |
 | `README.md` | Public civic brief — what this is, philosophy, ethical use, how it works, how to use, license. |
+| `WIRE-IN.md` | Five-minute React / Tailwind / audit recipe. |
 | `tokens.css` | Drop-in CSS variables for both layers. |
 | `components.html` | Live component gallery. |
 | `quick-start.html` | Cockpit + board template. |
+| `packages/react/`, `packages/audit/`, `packages/tailwind-preset/` | Operational layer (components, hard-ban scanner, Tailwind preset). |
 | `LICENSE` | MIT (original work only — see NOTICE.md for what is not relicensed). |
 | `NOTICE.md` | What is licensed (original work) and what is referenced (Rams, NYCTA, etc.). |
 | `docs/hero-banner.png` | Public README hero. Transit HUD in the drawing is illustration only. |
