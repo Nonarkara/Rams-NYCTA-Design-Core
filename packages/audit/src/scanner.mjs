@@ -5,6 +5,36 @@ import { BANS, SCAN_EXTENSIONS, SKIP_PATTERNS, UI_EXTENSIONS, UI_ONLY_RULES } fr
 const IGNORE_LINE = /^\s*\/\/\s*axiom-audit-ignore(?:-next-line)?/;
 
 /**
+ * Blank out the comment portions of a line so bans match real code only.
+ *
+ * The header of bans.mjs always claimed comments were skipped; it was never
+ * actually implemented, so prose describing a rule ("use a triangle, not →")
+ * was reported as a violation of that rule. Comments do not render, so they
+ * cannot be a visual tell.
+ *
+ * Spans are replaced with equal-length padding, not removed, so that the
+ * column numbers in a finding still point at the right character.
+ *
+ * @param {string} line
+ * @returns {string}
+ */
+export function stripComments(line) {
+  const pad = (m) => ' '.repeat(m.length);
+  let out = line
+    .replace(/\/\*[\s\S]*?\*\//g, pad) // /* inline */
+    .replace(/<!--[\s\S]*?-->/g, pad); // <!-- inline -->
+
+  // Whole-line comments, including unterminated block/JSDoc continuations.
+  if (/^\s*(?:\/\/|\/\*|\*|<!--)/.test(out)) return ' '.repeat(line.length);
+
+  // Trailing // comment — but not the // in a URL scheme.
+  const slash = out.search(/(?<!:)\/\//);
+  if (slash !== -1) out = out.slice(0, slash) + ' '.repeat(out.length - slash);
+
+  return out;
+}
+
+/**
  * Recursively collect files under a path, honoring skip patterns.
  *
  * @param {string} root
@@ -65,15 +95,17 @@ export async function scanFile(filePath, root) {
 
   // Per-line audit, skipping lines that opt out via axiom-audit-ignore
   let ignoreNext = false;
-  lines.forEach((line, i) => {
+  lines.forEach((rawLine, i) => {
     if (ignoreNext) {
       ignoreNext = false;
       return;
     }
-    if (IGNORE_LINE.test(line)) {
-      if (/axiom-audit-ignore-next-line/.test(line)) ignoreNext = true;
+    if (IGNORE_LINE.test(rawLine)) {
+      if (/axiom-audit-ignore-next-line/.test(rawLine)) ignoreNext = true;
       return;
     }
+
+    const line = stripComments(rawLine);
 
     for (const [category, rules] of Object.entries(BANS)) {
       // Skip UI-only rules when the file is not a UI file
