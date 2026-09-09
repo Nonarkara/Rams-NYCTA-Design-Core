@@ -4,6 +4,10 @@
 
 This file is the **5-line spine**. Drop it into any agent's context, ask for any artifact (cockpit, board, dashboard, wayfinding system, slide, document), and produce something that looks Rams × NYCTA on the first pass.
 
+> **Read [`BUILDER.md`](BUILDER.md) first.** That file is the method — how the work gets
+> made. This file is the law — what a correct surface looks like. Obeying the law without
+> the method produces compliant work that is still the wrong thing.
+
 ---
 
 ## 1. The Equation

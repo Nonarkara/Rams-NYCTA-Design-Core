@@ -15,6 +15,12 @@ The transit HUD in the banner — route-style discs, pictograms, platform scene 
 
 Throw this repo at any agent. The spine is [`AGENTS.md`](AGENTS.md). Install steps are in [`USAGE.md`](USAGE.md). Original work is MIT — see [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md).
 
+> **Before the rules — [`BUILDER.md`](BUILDER.md): how this repository expects you to work.**
+> Build something rough enough to tear apart. Imagine a human doing the job before you
+> prompt an agent to do it. Give the agent the real source material, not a description of
+> it. Test, because a hypothesis proves nothing. Have a second, different agent look for
+> the flaw. The law in this repository is the floor, not the work.
+
 ---
 
 ## What this is
