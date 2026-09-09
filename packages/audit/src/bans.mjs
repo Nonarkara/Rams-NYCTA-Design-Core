@@ -46,8 +46,8 @@ export const BANS = {
     { re: /\bfilter\s*:[^;]*\bblur\s*\(/g, msg: 'CSS blur filter is banned.' },
     { re: /\bbox-shadow\s*:[^;]*[1-9]px/g, msg: 'Non-zero box-shadow is banned. Use hairline borders instead.' },
     { re: /\bboxShadow\s*:\s*['"][^'"]*[1-9]px/g, msg: 'Non-zero boxShadow is banned. Use hairline borders instead.' },
-    { re: /\bfont-weight\s*:\s*(7\d\d|8\d\d|9\d\d)\b/g, msg: 'Font weight 700+ is banned on data.' },
-    { re: /\bfontWeight\s*:\s*(7\d\d|8\d\d|9\d\d)\b/g, msg: 'Font weight 700+ is banned on data.' },
+    { re: /\bfont-weight\s*:\s*(7\d\d|8\d\d|9\d\d)\b/g, msg: 'Font weight 700+ is banned on DATA. Confirm this is a label/button, not a value.', severity: 'warn' },
+    { re: /\bfontWeight\s*:\s*(7\d\d|8\d\d|9\d\d)\b/g, msg: 'Font weight 700+ is banned on DATA. Confirm this is a label/button, not a value.', severity: 'warn' },
     { re: /\bborder-radius\s*:[^;]*[3-9]px/g, msg: 'border-radius ≥ 3px is banned. Use 0 or 2px.' },
     { re: /\bborderRadius\s*:\s*['"][^'"]*[3-9]px/g, msg: 'borderRadius ≥ 3px is banned. Use 0 or 2px.' },
     { re: /\bborder-radius\s*:[^;]*\d+rem\b/g, msg: 'rem-based border-radius is banned.' },
@@ -73,12 +73,65 @@ export const BANS = {
   motion: [
     { re: /\banimate-bounce\b/g, msg: 'Bounce animation is banned.' },
     { re: /\btransition-all\s+duration-(7|8|9|10)\d{2,}\b/g, msg: 'Transitions over 700ms are too slow.' },
-    { re: /\bcubic-bezier\s*\(\s*[\d.]+\s*,\s*[\d.]+\s*,\s*[\d.]+\s*,\s*[12]\b/g, msg: 'Bounce/overshoot easing is banned. Use easeOut or easeInOut from tokens.' },
+    // Overshoot = a control-point Y outside [0,1]. y == 1 is easeOutQuint, which is legal.
+    { re: /\bcubic-bezier\s*\(\s*-?[\d.]+\s*,\s*(?:-[\d.]+|1\.\d+|[2-9][\d.]*)\s*,/g, msg: 'Bounce/overshoot easing is banned (y1 outside 0..1). Use --ease-out or --ease-in-out.' },
+    { re: /\bcubic-bezier\s*\(\s*-?[\d.]+\s*,\s*-?[\d.]+\s*,\s*-?[\d.]+\s*,\s*(?:-[\d.]+|1\.\d+|[2-9][\d.]*)\s*\)/g, msg: 'Bounce/overshoot easing is banned (y2 outside 0..1). Use --ease-out or --ease-in-out.' },
   ],
+
+  /** ---------------------------------------------------------------
+   *  ORIGIN TELLS — added 2026-09-08.
+   *
+   *  The bans above catch decoration. These catch *provenance*: the
+   *  cluster of defaults that lets a stranger identify a surface as
+   *  agent-generated from a screenshot or a View-Source.
+   *
+   *  No single hit here condemns a page. The tell is the stack.
+   *  See ANTI-TEMPLATE.md.
+   *  --------------------------------------------------------------- */
+
+  /** The typefaces every generator reaches for. The #1 visual tell. */
+  fonts: [
+    { re: /family=(Inter|Roboto|Poppins|Montserrat|Open\+Sans|Lato|Geist|Space\+Grotesk|Instrument\+Serif|Manrope|DM\+Sans)\b/g, msg: 'Banned template font in a Google Fonts URL. See ANTI-TEMPLATE.md §2.1.' },
+    { re: /['"](Inter|Roboto|Poppins|Montserrat|Open Sans|Lato|Geist|Space Grotesk|Instrument Serif|Manrope|DM Sans)['"]/g, msg: 'Banned template font. These are the six-plus faces every AI reaches for; a reader clocks them at ten metres.' },
+    { re: /font-family\s*:\s*system-ui\b/g, msg: 'system-ui as the primary face is a generator default. Name a real typeface.' },
+    { re: /fontFamily\s*:\s*['"]system-ui/g, msg: 'system-ui as the primary face is a generator default. Name a real typeface.' },
+  ],
+
+  /** "VibeCode purple" and the Tailwind default blue — the most-cited palette tells. */
+  slopColors: [
+    { re: /#(?:6366f1|818cf8|a5b4fc|8b5cf6|a855f7|7c3aed|6d28d9|4f46e5|7e22ce|c084fc|d946ef|e879f9)\b/gi, msg: 'VibeCode purple/indigo/violet. The single most-cited AI-slop colour family.' },
+    { re: /#(?:3b82f6|2563eb|60a5fa|1d4ed8)\b/gi, msg: 'Tailwind default blue. Banned by house law (§14).' },
+    { re: /\bbg-clip-text\b/g, msg: 'Gradient text on headings is a generator default.' },
+    { re: /-webkit-background-clip\s*:\s*text/g, msg: 'Gradient text on headings is a generator default.' },
+  ],
+
+  /** Build-tool fingerprints, leaked keys, dev-server references shipped to production. */
+  provenance: [
+    { re: /<meta[^>]+name=["']generator["'][^>]*>/gi, msg: 'Generator meta tag names the tool that built this. Remove it.' },
+    { re: /\b(?:lovable\.app|bolt\.new|v0\.dev|\.framer\.app|builder\.io)\b/gi, msg: 'Builder-platform host left in the source. Remove it.' },
+    { re: /https?:\/\/api\.(?:anthropic|openai)\.com/g, msg: 'Client-side call to an AI vendor API. Move it server-side — this also leaks the key.' },
+    { re: /\b(?:sk-ant-[A-Za-z0-9_-]{12,}|sk-[A-Za-z0-9]{24,}|AIza[A-Za-z0-9_-]{30,})\b/g, msg: 'API key literal in source. Rotate it — a key that touched history is burned (§16.1 Law 4).' },
+    { re: /https?:\/\/(?:localhost|127\.0\.0\.1):\d+/g, msg: 'Dev-server reference. If this ships, it is a production tell and usually a broken link.' },
+  ],
+
+  /** Layout reflexes. Judgment calls — warnings, not errors. */
+  layout: [
+    { re: /\bgrid-cols-3\b/g, msg: 'Three-equal-card row is the most recognisable AI layout. Legitimate only if the content is genuinely three peers.', severity: 'warn' },
+    { re: /\btext-center\b/g, msg: 'Centred content is the generator default. Dense content is never centred (house law).', severity: 'warn' },
+    { re: /\bbento\b/gi, msg: 'Bento grid is a 2024–2026 generator default.', severity: 'warn' },
+    { re: /(?:Now in Beta|Coming Soon|Powered by AI|✨)/gi, msg: 'Sparkle/beta pill. Filler chrome.', severity: 'warn' },
+    { re: /['">]\s*(?:99\.9%|99%|100%|10k\+|1M\+|10x|24\/7)\s*['"<]/gi, msg: 'Fake-precision stat banner. Every number carries source, tier and age (§16.1 Law 3) or it does not ship.', severity: 'warn' },
+  ],
+
+  /** Marketing-copy tells. Warnings — the writer decides. */
+  copy: [
+    { re: /\b(?:seamless(?:ly)?|cutting-edge|game-chang\w+|revolutioni[sz]\w+|supercharg\w+|unlock the power|transform your|elevate your|innovative solution\w*|robust solution\w*|delve|tapestry|leverage the)\b/gi, msg: 'Buzzword tell. Plain words, or cut it (§12.4 / Dr-Non-Write).', severity: 'warn' },
+  ],
+
 
   /** NYCTA — closed trunk palette. Any non-canonical --rt-* is a 9th trunk. */
   nycta: [
-    { re: /--rt-(?!blue|orange|green|red|purple|yellow|grey|brown)[a-z]+\b/g, msg: 'A 9th trunk color is banned. Use the closed 8-trunk palette only.' },
+    { re: /--rt-(?!blue|orange|green|red|purple|yellow|grey|brown|ink)[a-z]+\b/g, msg: 'A 9th trunk color is banned. Use the closed 8-trunk palette only.' },
   ],
 };
 
@@ -117,4 +170,4 @@ export const SCAN_EXTENSIONS = ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs', '.
 export const UI_EXTENSIONS = ['.tsx', '.jsx', '.html', '.vue', '.svelte', '.css', '.scss'];
 
 /** Rule ids that only apply to UI files. */
-export const UI_ONLY_RULES = new Set(['arrows', 'tailwind']);
+export const UI_ONLY_RULES = new Set(['arrows', 'tailwind', 'layout', 'copy']);

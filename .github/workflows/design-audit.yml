@@ -1,0 +1,22 @@
+name: Design audit
+
+# The gate only works if it runs without being remembered. A manual command
+# drifts back to being ignored — which is the failure this audit exists to catch.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Hard bans + origin tells (strict)
+        run: node packages/audit/bin/axiom-audit.mjs . --strict

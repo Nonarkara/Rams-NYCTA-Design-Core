@@ -8,6 +8,7 @@
 
 ## Read in this order
 
+0. **`ANTI-TEMPLATE.md`** — how not to look agent-generated. Read it before the DNA, not after. The DNA tells you what is correct; this tells you why correct is no longer sufficient on its own.
 1. **`AGENTS.md`** — the 5-line DNA. The spine. Most of your work can be correct after this single file.
 2. **`RAMS-DESIGN-DNA.md` §0** — the human + AI entry point with the philosophy and quick-start.
 3. **`RAMS-x-NYCTA-DNA.md` §0** — the same for the synthesis layer. Read if your product has multiple navigable boards.
@@ -31,5 +32,11 @@
 - **Never centre** dense content.
 - **Never** use Unicode arrows — solid greyscale triangle only.
 - **Never** use white glyphs on yellow.
+- **Never ship without `npx rams-nycta-audit . --strict` exiting 0.** Also run it against built output (`rams-nycta-audit dist`) — the provenance tells live in the bundle.
+- **Never start CSS without a Design Read and a named reference** written into the project's `context.md` (`ANTI-TEMPLATE.md` §4).
 
 When in doubt, remove. "Less, but better."
+
+## The one thing this file used to get wrong
+
+Obeying every rule here is no longer enough to look authored. The 2026 generated default *is* restraint — warm grounds, hairlines, tracked micro-labels, one muted accent. That is a description of this system. Compliance and distinction have come apart; `ANTI-TEMPLATE.md` §3 is the honest account of where they overlap and §4 is what closes the gap.
