@@ -1,5 +1,8 @@
 # Dr Non's Rams × NYCTA Design Core
 
+[Context before type](TYPOGRAPHY.md): Bringhurst-inspired selection and proof,
+applied to functional grotesques, data comparison and wayfinding.
+
 ![Designer at a desk between ram studies and a subway-platform scene. Route-style discs, pictograms, and the transit HUD in this drawing are illustration only — not a live interface and not official MTA signage.](docs/hero-banner.png)
 
 The transit HUD in the banner — route-style discs, pictograms, platform scene — is **illustration only**. It is not a shipped interface, not a component spec, and not official MTA or NYCTA signage.

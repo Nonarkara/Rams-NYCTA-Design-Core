@@ -1,5 +1,9 @@
 # Agent Quick-Start — Dr Non's Rams × NYCTA Design Core
 
+For type decisions, read [TYPOGRAPHY.md](TYPOGRAPHY.md) and
+[the portable skill](skills/bringhurst-contextual-type/SKILL.md).
+Keep house mode/token laws; proof actual text before requesting exceptions.
+
 > If you are an AI agent (Claude Code, Cursor, Cline, Continue, Aider, Windsurf, GPT, Copilot, or any other), read this file first. The full operating standard is in [`RAMS-DESIGN-DNA.md`](RAMS-DESIGN-DNA.md) and [`RAMS-x-NYCTA-DNA.md`](RAMS-x-NYCTA-DNA.md).
 
 This file is the **5-line spine**. Drop it into any agent's context, ask for any artifact (cockpit, board, dashboard, wayfinding system, slide, document), and produce something that looks Rams × NYCTA on the first pass.

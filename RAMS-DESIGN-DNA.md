@@ -80,6 +80,10 @@ Focus = a 1px border darken (`--line-2` → `--ink`). No glow, no ring, no halo.
 
 ## 2. Typography
 
+Before selecting or changing type, read [TYPOGRAPHY.md](TYPOGRAPHY.md).
+Proof task, viewing conditions and scripts within the rules below; it grants
+no automatic font, scale or tracking exception.
+
 Classic functional grotesque — the Braun/Akzidenz lineage. Numbers are tabular so columns align down the page.
 
 ### 2.1 Family
