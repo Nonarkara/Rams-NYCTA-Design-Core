@@ -284,6 +284,10 @@ This is **not** an official Rams, Braun, Vitsœ, Unimark, NYCTA, or MTA product.
 
 Read [NOTICE.md](NOTICE.md) before you ship.
 
+Use [DESIGN-TENETS.md](DESIGN-TENETS.md) to test whether the core's grammar serves
+your real content and task. It links the reusable, credited Bauhaus Human Design
+method and Palette's downloadable guide without introducing a second token system.
+
 ---
 
 > "Less, but better" — Dieter Rams  

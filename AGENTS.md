@@ -156,6 +156,9 @@ Direct. True. Economical — cut every word that carries no freight, as if you p
 
 ## 10. Need depth on a specific topic?
 
+Before revising a composition, also read `DESIGN-TENETS.md`: the task/content/
+communication quality gate supplements, but never replaces, the closed grammar.
+
 | Question | Read |
 |---|---|
 | How do I pick a colour? | `RAMS-DESIGN-DNA.md` §1 (Colour) + `RAMS-x-NYCTA-DNA.md` §2–§3 (Two systems, route palette) |

@@ -24,6 +24,9 @@
 
 ## Non-negotiable
 
+Read `DESIGN-TENETS.md` for the additional authored-design quality gate. Its
+linked method must preserve the DNA, closed palette and operational meanings.
+
 - **Never invent** a design decision not in the DNA doc. If you have an idea, look it up first.
 - **Never add colour** "to liven it up." The absence of colour is the normal state.
 - **Never round corners** beyond 2 px (Sato mercy-radius is the only exception, and only in Play mode).
