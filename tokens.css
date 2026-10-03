@@ -18,25 +18,30 @@
 
 :root {
 
-  /* ── LAYER 1: RAMS FOUNDATION ───────────────────────────── */
+  /* ── LAYER 1: RAMS FOUNDATION — SYSTEM A ─────────────── */
+  /* Palette plate 052, Sulpher Yellow + Black.
+     https://colors.nonarkara.org/#plate-052
+     One combination owns the viewport. These are System A
+     (the Rams field), not a third palette. System B trunks
+     stay in the block below.
+     Catalogue spelling "Sulpher" is Wada's, via Palette main.
+     Hex values are the credited digital conversion, not printed ink.
+     Contrast on this pair is 15.67:1. No other value from the
+     plate exists, so secondary text, rules, and the bare signal
+     use Black. A grey or a third hue would leave the combination
+     and fail on this field. */
 
-  /* §1 Color — warm-neutral near-monochrome */
-  --paper:  #faf9f7;   /* page bg — warm off-white, never #fff     */
-  --panel:  #ffffff;   /* cells / instrument faces                  */
-  --ink:    #191712;   /* primary text / bars / active — warm near-black */
-  --ink-2:  #6f6c63;   /* secondary text — AA on paper              */
-  --ink-3:  #a9a59a;   /* tertiary · labels · meta                  */
-  --line:   #e7e5dd;   /* hairlines · grid gaps · inactive tracks   */
-  --line-2: #d2cfc5;   /* stronger borders · structural dividers    */
+  --paper:  #f5ecc2;   /* Sulpher Yellow — background, dominant field */
+  --panel:  #f5ecc2;   /* same field — cards keep ink readable        */
+  --ink:    #111314;   /* Black — text and the counter-field          */
+  --ink-2:  #111314;   /* Black — no lighter plate value clears 4.5:1 */
+  --ink-3:  #111314;   /* Black — meta stays the same ink             */
+  --line:   #111314;   /* Black — hairline. A tint is not in the plate */
+  --line-2: #111314;   /* Black — structural rule                     */
 
-  /* One signal color + one negative-data color. No others. */
-  --accent: #1f6e43;   /* signal — positive / live / primary action */
-  --neg:    #a23a26;   /* negative data only — never buttons or headings */
-
-  /* Neutral fills — stacked bars / 3–5 categories, never hues */
-  --fill-1: #8f8b80;
-  --fill-2: #bdb9ad;
-  --fill-3: #d8d4ca;
+  /* The bare signal is Black. Plate 052 has no second hue. */
+  --accent: #111314;   /* live / positive — same Black, sign carries direction */
+  --neg:    #111314;   /* down-data — minus sign, not a second colour */
 
   /* §2 Typography */
   --font-sans:  'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -94,15 +99,18 @@
   /* Never as bare colored text in content (that is data-signal). */
   /* Never more than ~5 trunk families on screen at once.        */
 
-  --rt-blue:   #0039A6;   /* A·C·E      glyph: #fff        */
-  --rt-orange: #FF6319;   /* B·D·F·M    glyph: #fff        */
-  --rt-green:  #00853F;   /* 4·5·6      glyph: #fff        */
-  --rt-red:    #EE352E;   /* 1·2·3      glyph: #fff        */
-  --rt-purple: #B933AD;   /* 7          glyph: #fff        */
-  --rt-yellow: #FCCC0A;   /* N·Q·R·W    glyph: #191712 ← dark glyph only */
-  --rt-grey:   #6D6E71;   /* L·shuttle  glyph: #fff        */
-  --rt-brown:  #996633;   /* J·Z        glyph: #fff        */
-  --rt-ink:    #191712;   /* Hub/home   glyph: var(--paper)*/
+  --rt-blue:   #0039A6;   /* A·C·E      glyph: var(--glyph) */
+  --rt-orange: #FF6319;   /* B·D·F·M    glyph: var(--glyph) */
+  --rt-green:  #00853F;   /* 4·5·6      glyph: var(--glyph) */
+  --rt-red:    #EE352E;   /* 1·2·3      glyph: var(--glyph) */
+  --rt-purple: #B933AD;   /* 7          glyph: var(--glyph) */
+  --rt-yellow: #FCCC0A;   /* N·Q·R·W    glyph: #111314 ← dark glyph only */
+  --rt-grey:   #6D6E71;   /* L·shuttle  glyph: var(--glyph) */
+  --rt-brown:  #996633;   /* J·Z        glyph: var(--glyph) */
+  --rt-ink:    #111314;   /* Hub/home — System A Black, glyph: var(--paper) */
+  --glyph:     #fff;      /* System B type on dark trunks. Yellow uses --ink. */
+  --blue:      var(--rt-blue); /* System B identity, enclosed. Not a third blue. */
+  --red:       var(--ink);     /* System A bare signal — plate 052 Black. */
 }
 
 /* ── RESETS ────────────────────────────────────────────────── */
@@ -125,7 +133,7 @@ body {
 }
 
 /* ── SELECTION + FOCUS ─────────────────────────────────────── */
-::selection { background: var(--accent); color: #fff; }
+::selection { background: var(--ink); color: var(--paper); }
 :focus-visible { outline: 1px solid var(--ink); outline-offset: 2px; }
 
 /* ── LIVE PULSE — the only sanctioned continuous animation ─── */
@@ -170,7 +178,7 @@ body {
 .row__d-neg { font-size: 11px; font-weight: 600; color: var(--neg); width: 54px; text-align: right; }
 
 /* ── UTILITY: BAR / METER (The Lined Glass) ────────────────── */
-.bar { height: 6px; background: var(--line); position: relative; }
+.bar { height: 6px; background: var(--paper); border: 1px solid var(--ink); position: relative; }
 .bar__fill     { position: absolute; inset: 0 auto 0 0; background: var(--ink); }
 .bar--accent .bar__fill { background: var(--accent); }
 .bar--neg    .bar__fill { background: var(--neg); }
@@ -178,7 +186,7 @@ body {
 /* ── UTILITY: BUTTONS ──────────────────────────────────────── */
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--ink); cursor: pointer; transition: background var(--t-state) var(--ease-hover), color var(--t-state) var(--ease-hover), border-color var(--t-state) var(--ease-hover), transform var(--t-press) var(--ease-out); }
 .btn--primary { background: var(--ink); color: var(--paper); }
-.btn--accent  { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn--accent  { background: var(--accent); color: var(--paper); border-color: var(--accent); }
 .btn--ghost   { background: transparent; color: var(--ink); }
 .btn--primary:hover, .btn--accent:hover { opacity: .88; }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
@@ -200,9 +208,9 @@ body {
 /* ── UTILITY: DISC (NYCTA atom) ────────────────────────────── */
 /* The one sanctioned curved shape — coded token, not decoration */
 .disc { border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
-.disc--nav  { width: 20px; height: 20px; font-size: 10px; color: #fff; }
-.disc--board { width: 34px; height: 34px; font-size: 16px; color: #fff; }
-.disc--hero { width: 64px; height: 64px; font-size: 28px; color: #fff; }
+.disc--nav  { width: 20px; height: 20px; font-size: 10px; color: var(--glyph); }
+.disc--board { width: 34px; height: 34px; font-size: 16px; color: var(--glyph); }
+.disc--hero { width: 64px; height: 64px; font-size: 28px; color: var(--glyph); }
 /* Hub: ink disc for home/masthead */
 .disc--hub  { background: var(--rt-ink) !important; color: var(--paper) !important; }
 /* Yellow exception: dark glyph */

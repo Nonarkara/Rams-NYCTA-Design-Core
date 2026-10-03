@@ -4,12 +4,12 @@ import { tokens, HARD_BANS, MAX_DATA_WEIGHT } from '../tokens';
 describe('design tokens', () => {
   it('uses warm paper, not pure white', () => {
     expect(tokens.paper).not.toBe('#ffffff');
-    expect(tokens.paper).toBe('#f6f5f2');
+    expect(tokens.paper).toBe('#f5ecc2');
   });
 
   it('uses warm ink, not pure black', () => {
     expect(tokens.ink).not.toBe('#000000');
-    expect(tokens.ink).toBe('#191712');
+    expect(tokens.ink).toBe('#111314');
   });
 
   it('caps data font weight at 600', () => {

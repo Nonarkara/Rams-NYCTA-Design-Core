@@ -89,10 +89,10 @@ export function App() {
 ```tsx
 import { tokens, HARD_BANS } from '@axiom-design/core-react';
 
-tokens.paper    // '#f6f5f2' — warm off-white, never #fff
-tokens.ink      // '#191712' — warm near-black, never #000
-tokens.blue     // '#26243F' — THE LAW (identity, enclosed)
-tokens.red      // '#A8322B' — THE MOVE (live, critical, bare)
+tokens.paper    // '#f5ecc2' — plate 052 Sulpher Yellow, never #fff
+tokens.ink      // '#111314' — plate 052 Black, never #000
+tokens.blue     // '#0039A6' — System B trunk blue, enclosed
+tokens.red      // '#111314' — System A plate 052 Black, bare signal
 tokens.trunk    // closed 8-color NYCTA palette
 ```
 

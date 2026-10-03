@@ -9,18 +9,20 @@
  */
 
 export const tokens = {
-  /** Foundation — warm neutrals, never #000 / #fff */
-  paper: '#f6f5f2',
-  panel: '#ffffff',
-  ink: '#191712',
-  ink2: '#6f6c63',
-  ink3: '#a9a59a',
-  line: '#e7e5dd',
-  line2: '#d2cfc5',
+  /** System A — Palette plate 052. Sulpher Yellow field, Black ink. Never #000 / #fff */
+  paper: '#f5ecc2',
+  panel: '#f5ecc2',
+  ink: '#111314',
+  ink2: '#111314',
+  ink3: '#111314',
+  line: '#111314',
+  line2: '#111314',
+  accent: '#111314',
 
-  /** Signal — the only two colors allowed bare */
-  blue: '#26243F', // THE LAW — identity, structure. Enclosed only.
-  red: '#A8322B', // THE MOVE — live, critical, decision. Bare.
+  /** System B identity, enclosed. Same blue as the trunk. */
+  blue: '#0039A6',
+  /** System A bare signal. Plate 052 Black — same value as ink. */
+  red: '#111314',
 
   /** Trunk palette (NYCTA) — only for Play mode and 5+ board systems */
   trunk: {
