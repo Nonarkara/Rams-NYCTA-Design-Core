@@ -10,7 +10,7 @@ This is a **standards manual**, not inspiration. When you build with it:
 
 1. **Never invent values.** Every color, size, weight, and space comes from the tables here. If you reach for something not in the manual, you are doing it wrong — find the nearest sanctioned value.
 2. **Default to removal.** Before adding any element, ask: *does the interface fail without it?* If not, delete it. This is the single most important rule. "Less, but better" is a build instruction, not a slogan.
-3. **Hierarchy is made of size and grey, never decoration.** You may not introduce a box, shadow, gradient, or color to create emphasis. Emphasis = bigger, or darker; de-emphasis = smaller, or greyer.
+3. **Hierarchy is made of size, never decoration.** Plate 052 has no grey that clears on Sulpher Yellow. Emphasis = bigger; de-emphasis = smaller. You may not introduce a box, shadow, gradient, or a third hue.
 4. **One accent color, used as signal.** See §1. Color is information, never garnish.
 5. **The grid does the work.** Order comes from alignment and hairlines, not containers.
 6. **When in doubt, consult the Ten Principles (§9)** and the DON'T list (§8). They resolve most disputes.
@@ -37,42 +37,44 @@ The rules below are downstream of four convictions. When a rule and a situation 
 
 ## 1. Color
 
-Restrained, warm-neutral, near-monochrome. The system is **greyscale + one signal color**. Color carries meaning or it does not appear.
+System A is **Palette plate 052** — Sulpher Yellow and Black. One combination owns the viewport. These tokens are that plate, not a third system. System B (the NYCTA trunks) is the companion manual.
+
+Source: [colors.nonarkara.org/#plate-052](https://colors.nonarkara.org/#plate-052), Palette default branch. The hex values are the credited digital conversion. Catalogue spelling is "Sulpher".
 
 ### 1.1 Core tokens (reproduction standard)
 
 | Token | Hex | Role |
 |---|---|---|
-| `--paper` | `#faf9f7` | Page background — warm off-white, never pure `#fff` |
-| `--panel` | `#ffffff` | Cards / cells / instrument faces |
-| `--ink` | `#191712` | Primary text, bars, active state — warm near-black, never pure `#000` |
-| `--ink-2` | `#6f6c63` | Secondary text |
-| `--ink-3` | `#a9a59a` | Tertiary text, labels, meta |
-| `--line` | `#e7e5dd` | Hairlines, grid gaps, inactive tracks |
-| `--line-2` | `#d2cfc5` | Stronger borders, structural dividers |
-| `--accent` | `#1f6e43` | THE signal color — one only (here: a desaturated forest green) |
-| `--neg` | `#a23a26` | Negative-data only — a muted brick red, never bright |
+| `--paper` | `#f5ecc2` | Sulpher Yellow — page background. Owns the viewport. Never pure `#fff` |
+| `--panel` | `#f5ecc2` | Cards and cells stay on the field so ink text keeps its contrast |
+| `--ink` | `#111314` | Black — text, bars, and the counter-field. Never pure `#000` |
+| `--ink-2` | `#111314` | Secondary text. No lighter value in the plate clears 4.5:1 on the field |
+| `--ink-3` | `#111314` | Tertiary text, labels, meta. Same Black |
+| `--line` | `#111314` | Hairlines and grid gaps. A tint is not in the plate |
+| `--line-2` | `#111314` | Structural rules. Same Black |
+| `--accent` | `#111314` | The bare signal. Plate 052 has no second hue |
+| `--neg` | `#111314` | Down-data. The minus sign carries direction |
 
-> **Warmth rule.** Neutrals are warm (a trace of yellow/red), never cool blue-greys. Pure black and pure white are banned — they read as cheap and harsh. The accent is *desaturated*; a saturated accent shouts, and Rams never shouts.
+> **Contrast rule.** Black on Sulpher Yellow is 15.67:1. Do not put a colour on this field that fails that ground. Pure `#000` and pure `#fff` stay banned.
 
 ### 1.2 The accent is singular and meaningful
 
-- Pick **one** accent and assign it **one** job (primary action / positive / live). Document the job. Do not let it drift into decoration.
-- `--neg` is not a second accent — it is reserved exclusively for negative data (losses, down-moves, errors). It never styles a button or a heading.
-- Everything else is greyscale. If a design "needs" a third color, it needs a grey or a size change instead. (The one sanctioned way to add a *coded* color system is the NYCTA layer — see the companion manual. Do not freelance it.)
+- The signal is Black, the plate's counter-colour. It is also the ink. Direction is the plus or the minus, not a second hue.
+- `--neg` does not introduce another colour. It never styles a button or a heading.
+- A design that "needs" a third color needs a size change, or System B's enclosed trunk colour. Do not freelance a hue.
 
-### 1.3 Neutral fills (for stacked bars, categories, charts)
+### 1.3 Fills (for stacked bars, categories, charts)
 
-When you must distinguish 3–5 neutral categories, step through this ramp — never reach for hues:
+Distinguish categories with the plate's two values only:
 
 ```
---ink (#191712) → --accent (#1f6e43) → #8f8b80 → #bdb9ad → #d8d4ca
+--ink (#111314) → --paper (#f5ecc2)
 ```
 
 ### 1.4 Selection & focus
 
 ```css
-::selection { background: var(--accent); color: #fff; }
+::selection { background: var(--ink); color: var(--paper); }
 ```
 Focus = a 1px border darken (`--line-2` → `--ink`). No glow, no ring, no halo.
 
@@ -207,17 +209,16 @@ Fixed-width delta column keeps signs aligned. Up → `--accent`, down → `--neg
 ### 4.4 Bar / meter
 Flat track, solid fill, square ends. No radius, no gradient.
 ```html
-<div style="height:6px; background:var(--line); position:relative;">
+<div style="height:6px; background:var(--paper); border:1px solid var(--ink); position:relative;">
   <div style="position:absolute; inset:0 auto 0 0; width:69%; background:var(--ink);"></div>
 </div>
 ```
 
 ### 4.5 Stacked allocation bar
 ```html
-<div style="display:flex; height:8px; border:1px solid var(--line);">
-  <div style="width:38%; background:var(--ink);"></div>
-  <div style="width:27%; background:var(--accent);"></div>
-  <div style="width:15%; background:#8f8b80;"></div>
+<div style="display:flex; height:8px; border:1px solid var(--ink);">
+  <div style="width:62%; background:var(--ink);"></div>
+  <div style="width:38%; background:var(--paper);"></div>
 </div>
 ```
 
@@ -233,7 +234,7 @@ A black tag block + body + right-aligned readout, hairline border. The one place
 ```
 
 ### 4.7 Buttons
-- **Primary:** `background:var(--ink)` (neutral) or `var(--accent)` (positive action); `color:#fff`; padding `10–14px 18–22px`; `font:11–12px/700`, `letter-spacing:0.12em`, UPPERCASE; **no radius**; hover → `opacity:0.9`.
+- **Primary:** `background:var(--ink)`; `color:var(--paper)`; padding `10–14px 18–22px`; `font:11–12px/700`, `letter-spacing:0.12em`, UPPERCASE; **no radius**; hover → `opacity:0.9`. Accent uses the same Black.
 - **Tertiary / link:** transparent, `color:var(--ink-2)`, hover → `var(--accent)`. Pair with a directional triangle, not a unicode arrow, when it implies movement.
 
 ### 4.8 Inputs
@@ -273,7 +274,7 @@ The **only** sanctioned animation: a slow status pulse. No slides, no fades-in-o
 - **Never entrance from `scale(0)`.** Start at `scale(0.95)` + `opacity: 0` — nothing in the physical world disappears to nothing.
 - Allowed beyond the above: the status pulse (§4.9), a value counting to its number.
 - Banned everywhere: entrance choreography, scroll-triggered reveals, parallax, decorative loops, easing that bounces or "elastics", animation on a keyboard-triggered action.
-- **On looking templated:** this palette (warm off-white ground, Inter) is disciplined by design, and disciplined-by-design is also what a thousand AI-generated dashboards now default to for the same reasons. The antidote isn't novelty — it's finishing the craft this manual actually asks for: real curves, real press feedback, real data, honestly shown. A generic build skips exactly these details.
+- **On looking templated:** this palette (Sulpher Yellow field, Inter) is disciplined by design, and disciplined-by-design is also what a thousand AI-generated dashboards now default to for the same reasons. The antidote isn't novelty — it's finishing the craft this manual actually asks for: real curves, real press feedback, real data, honestly shown. A generic build skips exactly these details.
 
 ---
 
@@ -325,9 +326,9 @@ The **only** sanctioned animation: a slow status pulse. No slides, no fades-in-o
 Drop on a wrapper and style everything inline from `var(--…)`:
 
 ```html
-<div style="--paper:#faf9f7; --panel:#fff; --ink:#191712; --ink-2:#6f6c63;
-            --ink-3:#a9a59a; --line:#e7e5dd; --line-2:#d2cfc5;
-            --accent:#1f6e43; --neg:#a23a26;
+<div style="--paper:#f5ecc2; --panel:#f5ecc2; --ink:#111314; --ink-2:#111314;
+            --ink-3:#111314; --line:#111314; --line-2:#111314;
+            --accent:#111314; --neg:#111314;
             background:var(--paper); color:var(--ink);
             font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
             font-variant-numeric:tabular-nums; font-size:13px; line-height:1.42;
@@ -339,8 +340,8 @@ Drop on a wrapper and style everything inline from `var(--…)`:
 ```css
 /* the only global rules permitted */
 *{box-sizing:border-box;}
-html,body{margin:0;padding:0;background:#faf9f7;}
-::selection{background:#1f6e43;color:#fff;}
+html,body{margin:0;padding:0;background:#f5ecc2;}
+::selection{background:#111314;color:#f5ecc2;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 ```
 
@@ -350,7 +351,7 @@ html,body{margin:0;padding:0;background:#faf9f7;}
 
 You may retune **without breaking the DNA** by changing only these:
 
-- **Accent hue** — swap `--accent` for another *desaturated* color; keep one, keep it meaningful.
+- **Accent hue** — the shipped public tokens are Palette plate 052. A new hue leaves that combination. Keep one signal, and keep it on a ground it clears.
 - **Neutral temperature** — shift all greys cooler/warmer together (keep them consistent; never mix warm and cool).
 - **Density** — scale row padding (6px tight ↔ 14px airy) and base size (12–14px); keep the type *scale ratios* intact.
 - **Container width** — 1360 (tool) / 960 (app) / 720 (doc).

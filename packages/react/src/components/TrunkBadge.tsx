@@ -26,7 +26,7 @@ export function TrunkBadge({ trunk, children, size = 'md', className, ...rest }:
   const isLight = lightTrunks.includes(trunk);
   const style = {
     background: `var(--rt-${trunk})`,
-    color: isLight ? 'var(--ink)' : 'var(--paper)',
+    color: isLight ? 'var(--ink)' : 'var(--glyph)',
     borderColor: `var(--rt-${trunk})`,
     padding: size === 'sm' ? '1px 5px' : '2px 8px',
     fontSize: size === 'sm' ? 'var(--t-micro)' : 'var(--t-label)',

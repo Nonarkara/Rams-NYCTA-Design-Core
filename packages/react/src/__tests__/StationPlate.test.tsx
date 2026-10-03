@@ -20,10 +20,10 @@ describe('StationPlate', () => {
     expect(disc.style.color).toBe('var(--ink)');
   });
 
-  it('uses paper glyph on dark trunk', () => {
+  it('uses the trunk glyph on a dark trunk', () => {
     const { container } = render(<StationPlate trunk="blue" name="AQI" />);
     const disc = container.querySelector('.ax-disc') as HTMLElement;
-    expect(disc.style.color).toBe('var(--paper)');
+    expect(disc.style.color).toBe('var(--glyph)');
   });
 });
 

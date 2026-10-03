@@ -57,8 +57,8 @@ export const BANS = {
   /** Color literals in code — pure #000 and #fff are banned. */
   colors: [
     { re: /['"`]#[0-9a-fA-F]{6}['"`]/g, msg: 'Hardcoded hex color. Use --paper / --ink / --blue / --red / trunk tokens.', severity: 'warn' },
-    { re: /['"`]#000(?:000)?['"`]/g, msg: 'Pure #000 is banned. Use --ink (#191712).' },
-    { re: /['"`]#fff(?:fff)?['"`]/g, msg: 'Pure #fff is banned. Use --paper (#f6f5f2).' },
+    { re: /['"`]#000(?:000)?['"`]/g, msg: 'Pure #000 is banned. Use --ink (#111314).' },
+    { re: /['"`]#fff(?:fff)?['"`]/g, msg: 'Pure #fff is banned. Use --paper (#f5ecc2).' },
   ],
 
   /** Arrows / chevrons — must be solid greyscale triangles, never Unicode. */
