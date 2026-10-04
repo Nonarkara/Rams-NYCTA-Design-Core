@@ -42,52 +42,20 @@
 
 <!-- ════ §1 COLOR SYSTEM ════ -->
 <div class="g-section">
-  <div class="g-label">§1 Color — Warm-Neutral Near-Monochrome <span>greyscale + one signal + one neg</span></div>
-  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
-    <div style="background:var(--paper);padding:13px 11px;border:1px solid var(--line-2);">
-      <div class="stat-lbl">PAPER</div>
-      <div style="font-size:10px;margin-top:6px;font-family:var(--font-mono);">#faf9f7</div>
+  <div class="g-label">§1 Color — System A, Palette plate 052 <span>Sulpher Yellow + Black</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink);border:1px solid var(--ink);">
+    <div style="background:var(--paper);padding:13px 11px;">
+      <div class="stat-lbl">PAPER · BACKGROUND</div>
+      <div style="font-size:13px;font-weight:600;margin-top:6px;">Sulpher Yellow</div>
+      <div style="font-size:10px;margin-top:4px;font-family:var(--font-mono);">#f5ecc2</div>
     </div>
-    <div style="background:var(--panel);padding:13px 11px;border:1px solid var(--line-2);">
-      <div class="stat-lbl">PANEL</div>
-      <div style="font-size:10px;margin-top:6px;font-family:var(--font-mono);">#ffffff</div>
-    </div>
-    <div style="background:var(--ink);padding:13px 11px;">
-      <div class="stat-lbl" style="color:rgba(255,255,255,.5);">INK</div>
-      <div style="font-size:10px;margin-top:6px;font-family:var(--font-mono);color:rgba(255,255,255,.7);">#191712</div>
-    </div>
-    <div style="background:var(--accent);padding:13px 11px;">
-      <div class="stat-lbl" style="color:rgba(255,255,255,.7);">ACCENT</div>
-      <div style="font-size:10px;margin-top:6px;font-family:var(--font-mono);color:#fff;">#1f6e43</div>
-    </div>
-    <div style="background:var(--neg);padding:13px 11px;">
-      <div class="stat-lbl" style="color:rgba(255,255,255,.7);">NEG</div>
-      <div style="font-size:10px;margin-top:6px;font-family:var(--font-mono);color:#fff;">#a23a26</div>
+    <div style="background:var(--ink);color:var(--paper);padding:13px 11px;">
+      <div class="stat-lbl" style="color:var(--paper);">INK · SECOND FIELD · SIGNAL</div>
+      <div style="font-size:13px;font-weight:600;margin-top:6px;">Black</div>
+      <div style="font-size:10px;margin-top:4px;font-family:var(--font-mono);">#111314</div>
     </div>
   </div>
-  <div style="margin-top:1px;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
-    <div style="background:var(--ink-2);padding:11px;">
-      <div class="stat-lbl" style="color:rgba(255,255,255,.6);">INK-2</div>
-      <div style="font-size:10px;color:#fff;font-family:var(--font-mono);margin-top:4px;">#6f6c63</div>
-    </div>
-    <div style="background:var(--ink-3);padding:11px;">
-      <div class="stat-lbl" style="color:rgba(255,255,255,.6);">INK-3</div>
-      <div style="font-size:10px;color:#fff;font-family:var(--font-mono);margin-top:4px;">#a9a59a</div>
-    </div>
-    <div style="background:var(--line);padding:11px;">
-      <div class="stat-lbl">LINE</div>
-      <div style="font-size:10px;font-family:var(--font-mono);margin-top:4px;">#e7e5dd</div>
-    </div>
-    <div style="background:var(--line-2);padding:11px;">
-      <div class="stat-lbl">LINE-2</div>
-      <div style="font-size:10px;font-family:var(--font-mono);margin-top:4px;">#d2cfc5</div>
-    </div>
-    <div style="background:var(--fill-1);padding:11px;">
-      <div class="stat-lbl" style="color:rgba(255,255,255,.6);">FILL-1/2/3</div>
-      <div style="font-size:10px;color:#fff;font-family:var(--font-mono);margin-top:4px;">#8f8b80…</div>
-    </div>
-  </div>
-  <div class="g-note">Warmth rule: neutrals carry a trace of yellow/red — never cool blue-greys. Pure #000 and #fff are banned. Accent is desaturated — Rams never shouts.</div>
+  <div class="g-note">System A is Palette plate 052. Sulpher Yellow owns the viewport. Black is the text, the counter-field, and the bare signal — the plate has no third colour that clears on this ground. Panel stays on Sulpher Yellow so ink text keeps its contrast. System B, the trunk discs below, is the other system.</div>
 </div>
 
 
@@ -97,23 +65,23 @@
   <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
     <div style="background:var(--rt-blue);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
       <span class="disc disc--board" style="background:var(--rt-blue);">A</span>
-      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">A·C·E</div>
+      <div style="font-size:8px;color:var(--glyph);letter-spacing:0.1em;font-weight:600;text-align:center;">A·C·E</div>
     </div>
     <div style="background:var(--rt-orange);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
       <span class="disc disc--board" style="background:var(--rt-orange);">R</span>
-      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">B·D·F·M</div>
+      <div style="font-size:8px;color:var(--glyph);letter-spacing:0.1em;font-weight:600;text-align:center;">B·D·F·M</div>
     </div>
     <div style="background:var(--rt-green);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
       <span class="disc disc--board" style="background:var(--rt-green);">F</span>
-      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">4·5·6</div>
+      <div style="font-size:8px;color:var(--glyph);letter-spacing:0.1em;font-weight:600;text-align:center;">4·5·6</div>
     </div>
     <div style="background:var(--rt-red);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
       <span class="disc disc--board" style="background:var(--rt-red);">P</span>
-      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">1·2·3</div>
+      <div style="font-size:8px;color:var(--glyph);letter-spacing:0.1em;font-weight:600;text-align:center;">1·2·3</div>
     </div>
     <div style="background:var(--rt-purple);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
       <span class="disc disc--board" style="background:var(--rt-purple);">N</span>
-      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">7</div>
+      <div style="font-size:8px;color:var(--glyph);letter-spacing:0.1em;font-weight:600;text-align:center;">7</div>
     </div>
     <div style="background:var(--rt-yellow);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
       <span class="disc disc--board disc--yellow" style="background:var(--rt-yellow);">Q</span>
@@ -121,18 +89,18 @@
     </div>
     <div style="background:var(--rt-grey);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
       <span class="disc disc--board" style="background:var(--rt-grey);">L</span>
-      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">L·shuttle</div>
+      <div style="font-size:8px;color:var(--glyph);letter-spacing:0.1em;font-weight:600;text-align:center;">L·shuttle</div>
     </div>
     <div style="background:var(--rt-brown);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
       <span class="disc disc--board" style="background:var(--rt-brown);">J</span>
-      <div style="font-size:8px;color:#fff;letter-spacing:0.1em;font-weight:600;text-align:center;">J·Z</div>
+      <div style="font-size:8px;color:var(--glyph);letter-spacing:0.1em;font-weight:600;text-align:center;">J·Z</div>
     </div>
     <div style="background:var(--rt-ink);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
       <span class="disc disc--board disc--hub" style="width:34px;height:34px;font-size:16px;">D</span>
-      <div style="font-size:8px;color:rgba(255,255,255,.6);letter-spacing:0.1em;font-weight:600;text-align:center;">HUB</div>
+      <div style="font-size:8px;color:var(--paper);letter-spacing:0.1em;font-weight:600;text-align:center;">HUB</div>
     </div>
   </div>
-  <div class="g-note">Yellow exception: white on yellow fails contrast — yellow disc always takes dark glyph (#191712). Hub (home/masthead) = ink disc, never a trunk color. Closed set — never add a 9th hue.</div>
+  <div class="g-note">Yellow exception: white on yellow fails contrast — yellow disc takes System A Black (#111314). Hub disc uses that same Black, glyph Sulpher Yellow. Closed set — never add a 9th hue.</div>
 </div>
 
 
@@ -179,7 +147,7 @@
 
 <!-- ════ §5 HAIRLINE CELL GRID ════ -->
 <div class="g-section">
-  <div class="g-label">§3.2 Hairline Cell Grid — The Signature Move <span>background:var(--line); gap:1px; white cells</span></div>
+  <div class="g-label">§3.2 Hairline Cell Grid — The Signature Move <span>background:var(--line); gap:1px; field cells</span></div>
   <div class="grid-hair" style="grid-template-columns:repeat(4,1fr);">
     <div style="padding:13px 16px;"><div class="stat-lbl">Markets</div><div class="stat-val">47</div><div class="stat-sub">feeds active</div></div>
     <div style="padding:13px 16px;"><div class="stat-lbl">Incidents</div><div class="stat-val" style="color:var(--neg);">3</div><div class="stat-sub">critical</div></div>
@@ -233,7 +201,7 @@
       <div style="font-size:9px;color:var(--ink-3);margin-top:4px;">Source: Supabase · refreshed 15s</div>
     </div>
     <div class="g-col">
-      <div class="g-note" style="border:none;padding:0;margin:0;">Up → var(--accent). Down → var(--neg). Neutral → var(--ink-3). Fixed-width delta column (54px) keeps sign alignment. Baseline-aligned across label and value. Provenance line underneath is the honesty clause.</div>
+      <div class="g-note" style="border:none;padding:0;margin:0;">Up and down both use plate 052 Black. The plus and the minus carry direction. Fixed-width delta column (54px) keeps sign alignment. Provenance line underneath is the honesty clause.</div>
     </div>
   </div>
 </div>
@@ -271,16 +239,13 @@
     <div class="g-col">
       <div style="border:1px solid var(--line);background:var(--panel);padding:16px;">
         <div style="font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;">§4.5 Stacked Allocation</div>
-        <div style="display:flex;height:8px;border:1px solid var(--line);">
-          <div style="width:38%;background:var(--ink);"></div>
-          <div style="width:27%;background:var(--accent);"></div>
-          <div style="width:15%;background:var(--fill-1);"></div>
-          <div style="flex:1;background:var(--line);"></div>
+        <div style="display:flex;height:8px;border:1px solid var(--ink);">
+          <div style="width:62%;background:var(--ink);"></div>
+          <div style="flex:1;background:var(--paper);"></div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:8px;">
-          <div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;background:var(--ink);"></div><span style="font-size:10px;color:var(--ink-3);">Command · 38%</span></div>
-          <div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;background:var(--accent);"></div><span style="font-size:10px;color:var(--ink-3);">Active · 27%</span></div>
-          <div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;background:var(--fill-1);"></div><span style="font-size:10px;color:var(--ink-3);">Pending · 15%</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;background:var(--ink);"></div><span style="font-size:10px;color:var(--ink-3);">Black · 62%</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;background:var(--paper);border:1px solid var(--ink);"></div><span style="font-size:10px;color:var(--ink-3);">Sulpher Yellow · 38%</span></div>
         </div>
       </div>
     </div>
@@ -302,7 +267,7 @@
       </div>
     </div>
     <div style="display:flex;align-items:stretch;border:1px solid var(--line-2);background:var(--panel);">
-      <div style="background:var(--neg);color:#fff;padding:14px 20px;display:flex;align-items:center;flex-shrink:0;">
+      <div style="background:var(--neg);color:var(--paper);padding:14px 20px;display:flex;align-items:center;flex-shrink:0;">
         <span style="font-size:11px;letter-spacing:0.18em;font-weight:700;">CRITICAL</span>
       </div>
       <div style="padding:11px 20px;flex:1;">
@@ -311,7 +276,7 @@
       </div>
     </div>
   </div>
-  <div class="g-note">The black block left is the "sign plate" from NYCTA — reserve near-black fills for genuine status. The body stays on white. Never use gradient or colour to signal state — the form IS the signal.</div>
+  <div class="g-note">The black block left is the counter-field — reserve it for genuine status. The body stays on Sulpher Yellow. The word carries state. Plate 052 has no second hue for a separate alarm colour.</div>
 </div>
 
 
@@ -335,7 +300,7 @@
       <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;">Live</span>
     </div>
   </div>
-  <div class="g-note">Primary = ink. Accent = signal green (positive/confirm). Ghost = transparent. Tertiary = no border, grey text, triangle. The solid triangle (CSS-drawn, not Unicode) is the only directional element. The pulsing dot is the only sanctioned continuous animation.</div>
+  <div class="g-note">Primary and accent both use plate 052 Black, with Sulpher Yellow type. Ghost = transparent. The solid triangle (CSS-drawn, not Unicode) is the only directional element. The pulsing dot is the only sanctioned continuous animation.</div>
 </div>
 
 

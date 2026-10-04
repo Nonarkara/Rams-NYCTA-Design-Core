@@ -39,7 +39,7 @@ When in doubt, **start with Layer 1**. Add Layer 2 only when the product genuine
 
 ## 3. The Two Colour Systems (the central law)
 
-**System A — Rams silence:** warm-grey field, ink for text, one accent. Used in every surface.
+**System A — Rams silence:** Palette plate 052 owns the viewport. Sulpher Yellow `#f5ecc2` is the field. Black `#111314` is the ink, the counter-field, and the bare signal. Used on every surface. Source: [Palette](https://colors.nonarkara.org/#plate-052), default branch. Not a third colour system.
 
 **System B — NYCTA wayfinding:** the closed trunk palette (a small, finite set of route colours), the disc (enclosed), the station plate (board header), the arrow. Used only when the product has navigable boards.
 
@@ -47,16 +47,16 @@ When in doubt, **start with Layer 1**. Add Layer 2 only when the product genuine
 Should this be coloured?
   │
   ├─ Is it IDENTITY (which board / which route)? → blue disc or trunk colour, ENCLOSED.
-  ├─ Is it DATA (live / critical / down)?         → red, BARE.
+  ├─ Is it DATA (live / critical / down)?         → plate 052 Black, BARE.
   ├─ Is it DIRECTIONAL (go here / forward)?        → greyscale triangle, never colour.
   └─ None of these?                               → no colour. Grey + size.
 ```
 
 - **Blue is the law** — `#00247D` for identity, structure, sign headers. Enclosed.
-- **Red is the move** — `#A8322B` (or a signal red of your choosing) for the one exception. Bare, rare, loud.
-- **Warm greys are the silence** — `#f6f5f2` ground, `#191712` ink. Never pure `#000` or `#fff`.
+- **Black is the move** — plate 052 `#111314`, bare, on the Sulpher Yellow field. The plate has no second hue. The sign carries up and down.
+- **Sulpher Yellow is the silence** — `#f5ecc2` ground, `#111314` ink. Never pure `#000` or `#fff`.
 - **Trunk palette is closed** — typically 5–7 route families. No custom shades. No 8th trunk.
-- **No green** as a positive signal. The absence of red is the good news. Colour appears only at the exception.
+- **No green** as a positive signal. Up and down are the sign. Colour on the field is plate 052 Black, or it is not there.
 
 If you add colour "to liven it up," you have failed every master. Delete it.
 

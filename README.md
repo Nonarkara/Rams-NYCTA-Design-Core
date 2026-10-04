@@ -129,8 +129,8 @@ LAYER 2 — NYCTA-inspired wayfinding (RAMS-x-NYCTA-DNA.md)
   enclosed = identity · bare = data
 
 LAYER 1 — Rams foundation (RAMS-DESIGN-DNA.md)
-  Greyscale tokens · type scale · hairline grid · one accent ·
-  the ten principles · the ban list
+  Palette plate 052 · Sulpher Yellow field · Black ink ·
+  type scale · hairline grid · the ten principles · the ban list
 ```
 
 When in doubt, start with Layer 1.
@@ -143,7 +143,7 @@ Run top to bottom. Stop at the first match.
 Should this be coloured?
  │
  ├─ IDENTITY (which board / which route)?  → trunk colour, ENCLOSED (disc / plate / rule)
- ├─ DATA (live / critical / down)?         → --accent / --neg, BARE
+ ├─ DATA (live / critical / down)?         → plate 052 Black, BARE
  ├─ DIRECTIONAL (go here / forward)?       → greyscale solid triangle, never colour
  └─ None of these?                         → no colour. Grey + size.
 ```
@@ -203,12 +203,12 @@ For a multi-board React product: [`WIRE-IN.md`](WIRE-IN.md). `import { CockpitSh
 
 ### Tokens — Layer 1 (always)
 
-Drop on any wrapper. Style from `var(--…)`. Prefer the file over this block when you can.
+System A. Palette plate 052 — Sulpher Yellow and Black. One combination owns the viewport. Drop on any wrapper. Style from `var(--…)`. Prefer the file over this block when you can.
 
 ```html
-<div style="--paper:#faf9f7; --panel:#fff; --ink:#191712; --ink-2:#6f6c63;
-            --ink-3:#a9a59a; --line:#e7e5dd; --line-2:#d2cfc5;
-            --accent:#1f6e43; --neg:#a23a26;
+<div style="--paper:#f5ecc2; --panel:#f5ecc2; --ink:#111314; --ink-2:#111314;
+            --ink-3:#111314; --line:#111314; --line-2:#111314;
+            --accent:#111314; --neg:#111314;
             background:var(--paper); color:var(--ink);
             font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
             font-variant-numeric:tabular-nums; font-size:13px; line-height:1.42;
@@ -233,7 +233,7 @@ Publicly documented MTA trunk hexes, used here as **factual colour tokens** for 
   --rt-yellow: #FCCC0A;  /* N·Q·R·W — dark glyph only */
   --rt-grey:   #6D6E71;  /* L · shuttle */
   --rt-brown:  #996633;  /* J·Z */
-  --rt-ink:    #191712;  /* Hub / home */
+  --rt-ink:    #111314;  /* Hub / home — System A Black */
 }
 ```
 

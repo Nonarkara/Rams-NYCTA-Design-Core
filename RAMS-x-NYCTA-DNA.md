@@ -13,7 +13,7 @@ This manual governs **one thing the Rams manual forbids: color in quantity.** It
 Operating rules for humans and AI:
 
 1. **Two color systems, kept strictly apart** (§2). One identifies *where you are* (wayfinding); one reports *how the data is doing* (signal). They never blur.
-2. **Color only ever appears enclosed** — inside a disc, a plate, or a rule of fixed meaning. Bare colored text/shapes are still banned (except the data-signal greens/reds, which are bare *by rule*).
+2. **Color only ever appears enclosed** — inside a disc, a plate, or a rule of fixed meaning. Bare colour in content is plate 052 Black, the System A signal.
 3. **Color appears at the point of decision. Never before. Never after.** (Vignelli's Information Tree — §1.) A color that decorates rather than directs is a defect.
 4. **The palette is closed** (§3). Eight trunk colors, fixed hexes. You assign meaning; you never add a ninth hue or pick a shade by eye.
 5. When unsure whether to add color, run the **decision tree (§7)**. The default answer is *no* — fall back to grey + size (the Rams default).
@@ -56,7 +56,7 @@ This is the most important rule in the manual. Color does exactly two jobs, and 
 ### 2.2 Signal color (the Rams layer)
 - **Purpose:** data state — *is this value good/bad/live?*
 - **Form:** always **bare** — colored text or a bare bar. `--accent` (positive/up/live) and `--neg` (negative/down). Never enclosed in a disc.
-- **Palette:** exactly two, from the Rams manual.
+- **Palette:** plate 052 Black, bare. The plus and the minus carry direction. The plate has no second hue.
 - **Behaviour:** dynamic — it *is* the data.
 
 ### 2.3 The disambiguation rule
@@ -64,7 +64,7 @@ This is the most important rule in the manual. Color does exactly two jobs, and 
 
 A green disc with a "B" is the *Buys board* (identity). A bare green "+14.8%" is a *gain* (data). The enclosure is the grammar that keeps a screen full of color perfectly legible — the same trick that lets a subway map carry a dozen colors without confusion: every color is **on a bullet**, never loose.
 
-Corollary: if identity-green and signal-green sit near each other, that's fine — they're in different *forms*. But choose an identification green distinct in value from the signal green (the route set uses a brighter `#00853F`; the data signal uses a deeper `#1f6e43`) to remove all doubt.
+Corollary: route green stays enclosed. System A's bare signal is Palette plate 052 Black (`#111314`), not a green. The two greens no longer share a job.
 
 ---
 
@@ -79,12 +79,12 @@ Eight trunk colors, after the unified MTA/Vignelli system. **These hexes are the
 | `--rt-green` | `#00853F` | `#fff` | 4·5·6 |
 | `--rt-red` | `#EE352E` | `#fff` | 1·2·3 |
 | `--rt-purple` | `#B933AD` | `#fff` | 7 |
-| `--rt-yellow` | `#FCCC0A` | **`#191712`** | N·Q·R·W |
+| `--rt-yellow` | `#FCCC0A` | **`#111314`** | N·Q·R·W |
 | `--rt-grey` | `#6D6E71` | `#fff` | L · shuttle |
 | `--rt-brown` | `#996633` | `#fff` | J·Z |
-| `--rt-ink` | `#191712` | `#fff` | hub / "home" |
+| `--rt-ink` | `#111314` | `#f5ecc2` | hub / "home" |
 
-> **Yellow exception:** `--rt-yellow` is the only disc that takes a **dark** glyph (`#191712`) — white on yellow fails contrast. This mirrors the manual's own legibility discipline.
+> **Yellow exception:** `--rt-yellow` is the only disc that takes a **dark** glyph (`#111314`, System A Black from plate 052) — white on yellow fails contrast. The hub disc uses that same Black, with Sulpher Yellow type.
 
 ### 3.1 Assigning colors — the trunk-line method
 
@@ -217,7 +217,7 @@ If you ever find yourself adding color "to liven it up" or "to fill space," you 
 
 ## 8. DON'T (this layer's bans, on top of the Rams ban list)
 
-- ❌ A bare colored word, number, or icon in the content (that isn't the data-signal green/red). Color must be **enclosed**.
+- ❌ A bare colored word, number, or icon in the content (other than plate 052 Black). Trunk colour must be **enclosed**.
 - ❌ More than ~5 trunk families visible at once.
 - ❌ A unique color per board (use trunk families + glyphs instead).
 - ❌ Rounded-square "discs" — circles only; and the disc is the *only* curved shape allowed.

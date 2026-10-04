@@ -36,7 +36,7 @@ export function StationPlate({ trunk, name, district, meta, wayfinding = false, 
   const lightTrunks: TrunkColor[] = ['yellow'];
   const isLight = lightTrunks.includes(trunk);
   const discColor = `var(--rt-${trunk})`;
-  const glyphColor = isLight ? 'var(--ink)' : 'var(--paper)';
+  const glyphColor = isLight ? 'var(--ink)' : 'var(--glyph)';
 
   return (
     <div
