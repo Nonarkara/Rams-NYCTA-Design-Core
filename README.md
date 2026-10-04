@@ -287,6 +287,8 @@ This is **not** an official Rams, Braun, Vitsœ, Unimark, NYCTA, or MTA product.
 
 Read [NOTICE.md](NOTICE.md) before you ship.
 
+Field evidence for the closed palette: [docs/design-slop-field-guide.md](docs/design-slop-field-guide.md) — 18 slop patterns from 44 AI-assisted flood apps, each with a test.
+
 Use [DESIGN-TENETS.md](DESIGN-TENETS.md) to test whether the core's grammar serves
 your real content and task. It links the reusable, credited Bauhaus Human Design
 method and Palette's downloadable guide without introducing a second token system.
