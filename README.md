@@ -300,3 +300,12 @@ method and Palette's downloadable guide without introducing a second token syste
 > "The fun is in the flow." — Non Arkaraprasertkul
 
 *Non Arkaraprasertkul · axiom.nonarkara.org*
+
+## Task geometry
+
+[Decision geometry](DECISION-GEOMETRY.md) is part of the spatial law: prevent an
+oversized region from stretching its parent, pushing the task down and separating
+its controls. The [portable measurement gate](tools/decision-geometry/README.md)
+checks project-authored budgets, including preservation of operating regions.
+It supplements this framework's visual language; it does not restyle it or
+certify an interface from source alone.

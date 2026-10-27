@@ -2,6 +2,19 @@
 
 # CLAUDE.md — Claude Code quick-start
 
+<!-- decision-geometry:v1 -->
+## Task geometry before styling
+
+Read [Decision geometry](DECISION-GEOMETRY.md) for every UI composition change.
+Trace oversized introductions, sibling-stretched maps and separated controls to
+the first unnecessary expansion. Keep the task, its evidence and its next action
+legible together. Color, typography, alignment and zero horizontal overflow do
+not clear a failed composition. Preserve earned content and operating regions;
+use task-specific budgets, real viewport/state captures, a failing regression
+mutation and independent review. The guide's fixture numbers are not universal.
+<!-- /decision-geometry:v1 -->
+
+
 For type decisions, read [TYPOGRAPHY.md](TYPOGRAPHY.md) and
 [the portable skill](skills/bringhurst-contextual-type/SKILL.md).
 Keep house mode/token laws; proof actual text before requesting exceptions.

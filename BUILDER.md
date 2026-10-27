@@ -1,5 +1,12 @@
 # The Builder's Method
 
+
+Read [Decision geometry](DECISION-GEOMETRY.md) before accepting a composition:
+measure the expansion chain and the information/action relationship, preserve
+working content, and prove a task-specific regression budget fails the old fault.
+A palette or source-lint pass cannot substitute for rendered task evidence.
+
+
 **How this repository expects you to work.** Read this before the design law. The
 law tells you what a good surface looks like; this tells you how one gets made.
 Skip it and you will follow the rules and still build the wrong thing.

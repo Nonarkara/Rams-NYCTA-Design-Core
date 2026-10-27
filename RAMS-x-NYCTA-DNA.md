@@ -266,3 +266,14 @@ And both aim at the same feeling Jony Ive named in Rams's work: **inevitability*
 
 > Reference implementation: `DayTraders.dc.html` (route-disc nav, station-plate board headers, two-color-system data).
 > Foundation: `RAMS-DESIGN-DNA.md`.
+
+## Task geometry precedes visual compliance
+
+Aligned edges, a correct palette and consistent typography can coexist with a
+spatial failure. A long evidence column must not dictate a neighboring map's
+height without a comparison/operating reason. Tool titles and repeated explanatory
+bands must not push the information/action pair apart. Apply
+[Decision geometry](DECISION-GEOMETRY.md): measure the task, preserve its operating
+regions, falsify the previous failure and close independent review. This is an
+addition to the existing visual language, not permission to remove authored
+artwork, a color field, a live map or necessary source qualifications.
