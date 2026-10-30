@@ -3,9 +3,9 @@
 [Context before type](TYPOGRAPHY.md): Bringhurst-inspired selection and proof,
 applied to functional grotesques, data comparison and wayfinding.
 
-![Designer at a desk between ram studies and a subway-platform scene. Route-style discs, pictograms, and the transit HUD in this drawing are illustration only — not a live interface and not official MTA signage.](docs/hero-banner.png)
+![Dr Non's Dieter Rams in NYC Metro Design Core — RAMS + NYCTA = DESIGN CORE](assets/photos/rams-nycta-concept-01.png)
 
-The transit HUD in the banner — route-style discs, pictograms, platform scene — is **illustration only**. It is not a shipped interface, not a component spec, and not official MTA or NYCTA signage.
+The concept sheets on this page are **illustration only**. Route-style discs, pictograms, and any transit scene in them are not a shipped interface, not a component spec, and not official MTA or NYCTA signage.
 
 > Less, but better.  
 > Information at the point of decision. Never before. Never after.  
@@ -135,6 +135,8 @@ LAYER 1 — Rams foundation (RAMS-DESIGN-DNA.md)
 
 When in doubt, start with Layer 1.
 
+![01 — The Rams Foundation: restraint is the operating system](assets/photos/rams-nycta-concept-02.png)
+
 ### Colour decision tree
 
 Run top to bottom. Stop at the first match.
@@ -150,6 +152,8 @@ Should this be coloured?
 
 If you add colour to liven it up, delete it.
 
+![02 — The NYCTA Layer: color as wayfinding, never decoration](assets/photos/rams-nycta-concept-03.png)
+
 ### Enclosure law
 
 | Form | Meaning |
@@ -159,9 +163,7 @@ If you add colour to liven it up, delete it.
 
 Never invert it. Enclosure is what keeps a dense screen legible.
 
-### Cockpit
-
-Keep the fewest instruments needed to operate safely in view. Everything else is one decision away. Vital signs at the top. Provenance on every metric (source + date/time).
+![03 — The Two Color Systems: enclosed = identity, bare = data](assets/photos/rams-nycta-concept-04.png)
 
 ### Files
 
@@ -178,8 +180,8 @@ Keep the fewest instruments needed to operate safely in view. Everything else is
 | [`packages/react/`](packages/react/README.md) | React 19 + TypeScript components |
 | [`packages/audit/`](packages/audit/README.md) | Hard-ban scanner (`npx rams-nycta-audit`) |
 | [`packages/tailwind-preset/`](packages/tailwind-preset/README.md) | Closed trunk palette as Tailwind, banned utilities removed |
-| [`docs/hero-banner.png`](docs/hero-banner.png) | Public hero illustration (HUD = drawing only) |
-| [`assets/photos/`](assets/photos/) | Original educational concept sheets |
+| [`docs/hero-banner.png`](docs/hero-banner.png) | Secondary studio drawing (HUD = illustration only) |
+| [`assets/photos/`](assets/photos/) | Original educational concept sheets, embedded in this README |
 | [`LICENSE`](LICENSE) | MIT for original work |
 | [`NOTICE.md`](NOTICE.md) | What MIT does not relicense |
 
@@ -237,6 +239,14 @@ Publicly documented MTA trunk hexes, used here as **factual colour tokens** for 
 }
 ```
 
+![04 — Grid, Type & Hairline Order: order is the product](assets/photos/rams-nycta-concept-05.png)
+
+### Cockpit
+
+Keep the fewest instruments needed to operate safely in view. Everything else is one decision away. Vital signs at the top. Provenance on every metric (source + date/time).
+
+![05 — Cockpit, Components & Feedback: the critical instruments stay in view](assets/photos/rams-nycta-concept-06.png)
+
 ### Hard bans
 
 - Gradients, drop shadows, glows, blurs, glassmorphism
@@ -253,6 +263,8 @@ Publicly documented MTA trunk hexes, used here as **factual colour tokens** for 
 - White glyphs on `--rt-yellow`
 - A ninth trunk colour, or a custom shade
 - Filler, placeholder, decoration of any kind
+
+![06 — Workflow, Checklist & Hard Bans: from idea to shipped system](assets/photos/rams-nycta-concept-07.png)
 
 Motion that remains: real easing curves and press feedback. See `RAMS-DESIGN-DNA.md` §6.
 
@@ -272,6 +284,14 @@ Motion that remains: real easing curves and press feedback. See `RAMS-DESIGN-DNA
 | 10. As little design as possible | The master rule. When stuck, remove. |
 
 The Ten Principles remain the property of their rights holders. This table is an interface reading, not a relicense.
+
+### Secondary drawing
+
+Not one of the concept sheets. Animal ram, desk studies, platform scene.
+
+![Designer at a desk between ram studies and a subway-platform scene. Route-style discs, pictograms, and the transit HUD in this drawing are illustration only — not a live interface and not official MTA signage.](docs/hero-banner.png)
+
+The transit HUD in the banner — route-style discs, pictograms, platform scene — is **illustration only**. It is not a shipped interface, not a component spec, and not official MTA or NYCTA signage.
 
 ---
 
