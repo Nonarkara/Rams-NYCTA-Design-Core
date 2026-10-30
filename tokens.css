@@ -13,8 +13,8 @@
    Rule: never invent a value not in this file.
    ============================================================ */
 
-/* Google Fonts — Inter (preferred neo-grotesque for screen) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+/* No web font. Helvetica Neue / Helvetica / Arial are system-resident.
+   Zero network round-trip, zero generator tell. */
 
 :root {
 
@@ -39,9 +39,12 @@
   --fill-3: #d8d4ca;
 
   /* §2 Typography */
-  --font-sans:  'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  /* Helvetica Neue is the canonical Rams/Braun voice.
-     Inter is the free screen equivalent — use it by default. */
+  --font-sans:  'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Helvetica Neue is the canonical Rams/Braun voice, and it is already
+     on every machine — no web font, no network round-trip.
+     Inter was removed 2026-09-08: it is the single most-cited tell of
+     agent-generated design, and a design core that ships it teaches
+     every consumer to wear the same uniform. See ANTI-TEMPLATE.md §2.1. */
   --font-mono:  'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   /* Mono: only where character-cell alignment is functionally required
      (tickers, codes, timestamps). Never as a decorative choice. */
